@@ -3,10 +3,16 @@ package View;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class view {
 
 	private JFrame frame;
+	private JPanel Modifica;
+	private JPanel Home;
+	private JPanel Prenotazione;
+	private JPanel Cancella;
+	private JPanel I_miei_viaggi;
 
 	/**
 	 * Launch the application.
@@ -38,6 +44,8 @@ public class view {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 	}
 
 }
