@@ -1,6 +1,7 @@
 package View;
 
 import java.awt.CardLayout;
+import Controller.controller;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -11,6 +12,9 @@ import javax.swing.JButton;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import Controller.controller;
+
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
@@ -23,18 +27,32 @@ public class view {
 
 	private JFrame frame;
 	private JPanel Home;
-	private JPanel Prenotazione;
-	private JPanel Cancella;
+	private JPanel Anteprima;
+	private JPanel Notizia;
 	private JTextField txtNewYorkTimes;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField txtCat;
-	private JTextField txtCat_1;
-	private JTextField txtCat_2;
-	private JTextField txtCat_3;
-	private JTextField txtCat_4;
-	private JTextField txtCat_5;
+	private JTextField textField_search;
+	private JTextField txtNewYorkTimes_1;
+	private JButton btnletsread;
+	private JComboBox comboBoxNews;
+	private JTextArea textNotizia1;
+	private JButton btnNotizia1;
+	private JTextPane textNotizia2;
+	private JButton btnNotizia2;
+	private JTextArea textNotizia3;
+	private JButton btnNotizia3;
+	private JButton btnHomeAnteprima;
+	private JButton btnsearch;
+	private JButton btnHomenotizia;
+	private JTextArea textAreanotizia;
+	
+	public void registraController(controller controller) {
+		txtNewYorkTimes.addActionListener(controller);
 
+	}
+	
 	/**
 	 * Launch the application.
 	 */
@@ -91,11 +109,11 @@ public class view {
 		txtrWelcomeToThe.setBounds(119, 65, 283, 52);
 		Home.add(txtrWelcomeToThe);
 		
-		JButton letsread = new JButton("LET'S READ");
-		letsread.setBackground(new Color(50, 205, 50));
-		letsread.setForeground(new Color(0, 0, 0));
-		letsread.setBounds(230, 341, 112, 27);
-		Home.add(letsread);
+		 btnletsread = new JButton("LET'S READ");
+		btnletsread.setBackground(new Color(50, 205, 50));
+		btnletsread.setForeground(new Color(0, 0, 0));
+		btnletsread.setBounds(230, 341, 112, 27);
+		Home.add(btnletsread);
 		
 		JTextArea txtrClickingOnThe = new JTextArea();
 		txtrClickingOnThe.setBackground(new Color(220, 220, 220));
@@ -111,10 +129,10 @@ public class view {
 		txtrHereYouCan.setBounds(156, 172, 273, 101);
 		Home.add(txtrHereYouCan);
 		
-		Prenotazione = new JPanel();
-		Prenotazione.setLayout(null);
-		Prenotazione.setBackground(Color.WHITE);
-		frame.getContentPane().add(Prenotazione, "name_2008333190200");
+		Anteprima = new JPanel();
+		Anteprima.setLayout(null);
+		Anteprima.setBackground(Color.WHITE);
+		frame.getContentPane().add(Anteprima, "name_2008333190200");
 		
 		textField = new JTextField();
 		textField.setText("NEW YORK TIMES");
@@ -125,112 +143,248 @@ public class view {
 		textField.setColumns(10);
 		textField.setBackground(Color.WHITE);
 		textField.setBounds(211, 10, 244, 47);
-		Prenotazione.add(textField);
+		Anteprima.add(textField);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(20, 141, 134, 21);
-		Prenotazione.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(20, 219, 134, 21);
-		Prenotazione.add(comboBox_1);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setBounds(20, 295, 134, 21);
-		Prenotazione.add(comboBox_2);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(20, 368, 134, 21);
-		Prenotazione.add(comboBox_3);
-		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds(20, 445, 134, 21);
-		Prenotazione.add(comboBox_4);
-		
-		JComboBox comboBox_5 = new JComboBox();
-		comboBox_5.setBounds(20, 528, 134, 21);
-		Prenotazione.add(comboBox_5);
+		 comboBoxNews = new JComboBox();
+		comboBoxNews.setBounds(21, 188, 134, 21);
+		Anteprima.add(comboBoxNews);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(176, 93, 1, 507);
-		Prenotazione.add(textField_1);
+		Anteprima.add(textField_1);
 		textField_1.setColumns(10);
 		
 		txtCat = new JTextField();
 		txtCat.setText("cat 1");
 		txtCat.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat.setBounds(37, 112, 96, 19);
-		Prenotazione.add(txtCat);
+		txtCat.setBounds(42, 151, 96, 19);
+		Anteprima.add(txtCat);
 		txtCat.setColumns(10);
 		
-		txtCat_1 = new JTextField();
-		txtCat_1.setText("cat 2");
-		txtCat_1.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat_1.setColumns(10);
-		txtCat_1.setBounds(37, 187, 96, 19);
-		Prenotazione.add(txtCat_1);
+		 textNotizia1 = new JTextArea();
+		textNotizia1.setBounds(221, 136, 300, 97);
+		Anteprima.add(textNotizia1);
 		
-		txtCat_2 = new JTextField();
-		txtCat_2.setText("cat 3");
-		txtCat_2.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat_2.setColumns(10);
-		txtCat_2.setBounds(37, 266, 96, 19);
-		Prenotazione.add(txtCat_2);
+		btnNotizia1 = new JButton("READ MORE");
+		btnNotizia1.setBounds(315, 238, 116, 21);
+		Anteprima.add(btnNotizia1);
 		
-		txtCat_3 = new JTextField();
-		txtCat_3.setText("cat 4");
-		txtCat_3.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat_3.setColumns(10);
-		txtCat_3.setBounds(37, 337, 96, 19);
-		Prenotazione.add(txtCat_3);
+		 textNotizia2 = new JTextPane();
+		textNotizia2.setBounds(211, 283, 332, 108);
+		Anteprima.add(textNotizia2);
 		
-		txtCat_4 = new JTextField();
-		txtCat_4.setText("cat 5");
-		txtCat_4.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat_4.setColumns(10);
-		txtCat_4.setBounds(37, 416, 96, 19);
-		Prenotazione.add(txtCat_4);
+		 btnNotizia2 = new JButton("READ MORE");
+		btnNotizia2.setBounds(315, 401, 116, 21);
+		Anteprima.add(btnNotizia2);
 		
-		txtCat_5 = new JTextField();
-		txtCat_5.setText("cat 6");
-		txtCat_5.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat_5.setColumns(10);
-		txtCat_5.setBounds(37, 500, 96, 19);
-		Prenotazione.add(txtCat_5);
+		 textNotizia3 = new JTextArea();
+		textNotizia3.setBounds(203, 443, 340, 108);
+		Anteprima.add(textNotizia3);
 		
-		JTextArea textNotizia1 = new JTextArea();
-		textNotizia1.setBounds(221, 109, 300, 97);
-		Prenotazione.add(textNotizia1);
+		 btnNotizia3 = new JButton("READ MORE");
+		btnNotizia3.setBounds(315, 556, 116, 21);
+		Anteprima.add(btnNotizia3);
 		
-		JButton btnNotizia1 = new JButton("READ MORE");
-		btnNotizia1.setBounds(315, 219, 116, 21);
-		Prenotazione.add(btnNotizia1);
-		
-		JTextPane textNotizia2 = new JTextPane();
-		textNotizia2.setBounds(211, 266, 332, 108);
-		Prenotazione.add(textNotizia2);
-		
-		JButton btnNotizia2 = new JButton("READ MORE");
-		btnNotizia2.setBounds(315, 388, 116, 21);
-		Prenotazione.add(btnNotizia2);
-		
-		JTextArea textNotizia3 = new JTextArea();
-		textNotizia3.setBounds(211, 429, 340, 108);
-		Prenotazione.add(textNotizia3);
-		
-		JButton btnNotizia3 = new JButton("READ MORE");
-		btnNotizia3.setBounds(315, 547, 116, 21);
-		Prenotazione.add(btnNotizia3);
-		
-		JButton btnHomeAnteprima = new JButton("HOME");
+		 btnHomeAnteprima = new JButton("HOME");
 		btnHomeAnteprima.setBounds(481, 593, 85, 21);
-		Prenotazione.add(btnHomeAnteprima);
+		Anteprima.add(btnHomeAnteprima);
 		
-		Cancella = new JPanel();
-		Cancella.setLayout(null);
-		Cancella.setBackground(Color.WHITE);
-		frame.getContentPane().add(Cancella, "name_2008359398100");
+		textField_search = new JTextField();
+		textField_search.setBounds(191, 79, 275, 27);
+		Anteprima.add(textField_search);
+		textField_search.setColumns(10);
+		
+		 btnsearch = new JButton("->");
+		btnsearch.setBounds(476, 82, 45, 21);
+		Anteprima.add(btnsearch);
+		
+		Notizia = new JPanel();
+		Notizia.setLayout(null);
+		Notizia.setBackground(Color.WHITE);
+		frame.getContentPane().add(Notizia, "name_2008359398100");
+		
+		txtNewYorkTimes_1 = new JTextField();
+		txtNewYorkTimes_1.setFont(new Font("Caladea", Font.BOLD, 19));
+		txtNewYorkTimes_1.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNewYorkTimes_1.setText("NEW YORK TIMES");
+		txtNewYorkTimes_1.setBounds(156, 24, 290, 47);
+		Notizia.add(txtNewYorkTimes_1);
+		txtNewYorkTimes_1.setColumns(10);
+		
+		 btnHomenotizia = new JButton("HOME");
+		btnHomenotizia.setBounds(246, 571, 99, 29);
+		Notizia.add(btnHomenotizia);
+		
+		 textAreanotizia = new JTextArea();
+		textAreanotizia.setBounds(96, 108, 433, 446);
+		Notizia.add(textAreanotizia);
 		
 		
 	}
+
+	public void cambiaPanel(JPanel uno, JPanel due) {
+		uno.setVisible(false);
+		due.setVisible(true);
+	}
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public JPanel getHome() {
+		return Home;
+	}
+
+	public void setHome(JPanel home) {
+		Home = home;
+	}
+
+	public JPanel getPrenotazione() {
+		return Anteprima;
+	}
+
+	public void setPrenotazione(JPanel prenotazione) {
+		Anteprima = prenotazione;
+	}
+
+	public JPanel getCancella() {
+		return Notizia;
+	}
+
+	public void setCancella(JPanel cancella) {
+		Notizia = cancella;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
+	}
+
+	public JTextField getTxtCat() {
+		return txtCat;
+	}
+
+	public void setTxtCat(JTextField txtCat) {
+		this.txtCat = txtCat;
+	}
+
+	public JTextField getTextField_search() {
+		return textField_search;
+	}
+
+	public void setTextField_search(JTextField textField_search) {
+		this.textField_search = textField_search;
+	}
+
+	public JButton getBtnletsread() {
+		return btnletsread;
+	}
+
+	public void setBtnletsread(JButton btnletsread) {
+		this.btnletsread = btnletsread;
+	}
+
+	public JComboBox getComboBoxNews() {
+		return comboBoxNews;
+	}
+
+	public void setComboBoxNews(JComboBox comboBoxNews) {
+		this.comboBoxNews = comboBoxNews;
+	}
+
+	public JTextArea getTextNotizia1() {
+		return textNotizia1;
+	}
+
+	public void setTextNotizia1(JTextArea textNotizia1) {
+		this.textNotizia1 = textNotizia1;
+	}
+
+	public JButton getBtnNotizia1() {
+		return btnNotizia1;
+	}
+
+	public void setBtnNotizia1(JButton btnNotizia1) {
+		this.btnNotizia1 = btnNotizia1;
+	}
+
+	public JTextPane getTextNotizia2() {
+		return textNotizia2;
+	}
+
+	public void setTextNotizia2(JTextPane textNotizia2) {
+		this.textNotizia2 = textNotizia2;
+	}
+
+	public JButton getBtnNotizia2() {
+		return btnNotizia2;
+	}
+
+	public void setBtnNotizia2(JButton btnNotizia2) {
+		this.btnNotizia2 = btnNotizia2;
+	}
+
+	public JTextArea getTextNotizia3() {
+		return textNotizia3;
+	}
+
+	public void setTextNotizia3(JTextArea textNotizia3) {
+		this.textNotizia3 = textNotizia3;
+	}
+
+	public JButton getBtnNotizia3() {
+		return btnNotizia3;
+	}
+
+	public void setBtnNotizia3(JButton btnNotizia3) {
+		this.btnNotizia3 = btnNotizia3;
+	}
+
+	public JButton getBtnHomeAnteprima() {
+		return btnHomeAnteprima;
+	}
+
+	public void setBtnHomeAnteprima(JButton btnHomeAnteprima) {
+		this.btnHomeAnteprima = btnHomeAnteprima;
+	}
+
+	public JButton getBtnsearch() {
+		return btnsearch;
+	}
+
+	public void setBtnsearch(JButton btnsearch) {
+		this.btnsearch = btnsearch;
+	}
+
+	public JButton getBtnHomenotizia() {
+		return btnHomenotizia;
+	}
+
+	public void setBtnHomenotizia(JButton btnHomenotizia) {
+		this.btnHomenotizia = btnHomenotizia;
+	}
+
+	public JTextArea getTextAreanotizia() {
+		return textAreanotizia;
+	}
+
+	public void setTextAreanotizia(JTextArea textAreanotizia) {
+		this.textAreanotizia = textAreanotizia;
+	}
+	
 }
