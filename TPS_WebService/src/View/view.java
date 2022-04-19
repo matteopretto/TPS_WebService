@@ -1,7 +1,7 @@
 package View;
 
 import java.awt.CardLayout;
-import Controller.controller;
+import Controller.Controller;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -13,7 +13,7 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import Controller.controller;
+
 
 import java.awt.Font;
 import javax.swing.JTextArea;
@@ -34,7 +34,7 @@ public class view {
 	private JTextField textField_1;
 	private JTextField txtCat;
 	private JTextField textField_search;
-	private JTextField txtNewYorkTimes_1;
+	private JTextField textField_Title;
 	private JButton btnletsread;
 	private JComboBox comboBoxNews;
 	private JTextArea textNotizia1;
@@ -46,11 +46,26 @@ public class view {
 	private JButton btnHomeAnteprima;
 	private JButton btnsearch;
 	private JButton btnHomenotizia;
-	private JTextArea textAreanotizia;
+	private JTextField txtLingua;
+	private JComboBox comboBoxLingua;
+	private JTextField textAutore;
+	private JTextField textField_Data;
+	private JTextArea textArea_Descrizione;
+	private JTextField textField_Fonte;
+	private JTextField textField_Immagine;
 	
-	public void registraController(controller controller) {
-		txtNewYorkTimes.addActionListener(controller);
-
+	public void registraController(Controller controller) {
+		btnletsread.addActionListener(controller);
+		btnNotizia2.addActionListener(controller);
+		comboBoxNews.addActionListener(controller);
+		btnNotizia1.addActionListener(controller);
+		btnNotizia2.addActionListener(controller);
+		btnNotizia3.addActionListener(controller);
+		btnHomeAnteprima.addActionListener(controller);
+		btnsearch.addActionListener(controller);
+		btnHomenotizia.addActionListener(controller);
+		comboBoxLingua.addActionListener(controller);
+		
 	}
 	
 	/**
@@ -147,6 +162,9 @@ public class view {
 		
 		 comboBoxNews = new JComboBox();
 		comboBoxNews.setBounds(21, 188, 134, 21);
+		comboBoxNews.addItem("pertinenza");
+		comboBoxNews.addItem("popolarita");
+		
 		Anteprima.add(comboBoxNews);
 		
 		textField_1 = new JTextField();
@@ -155,26 +173,26 @@ public class view {
 		textField_1.setColumns(10);
 		
 		txtCat = new JTextField();
-		txtCat.setText("cat 1");
+		txtCat.setText("ORDINA PER");
 		txtCat.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat.setBounds(42, 151, 96, 19);
+		txtCat.setBounds(40, 159, 96, 19);
 		Anteprima.add(txtCat);
 		txtCat.setColumns(10);
 		
 		 textNotizia1 = new JTextArea();
-		textNotizia1.setBounds(221, 136, 300, 97);
+		textNotizia1.setBounds(221, 136, 300, 42);
 		Anteprima.add(textNotizia1);
 		
 		btnNotizia1 = new JButton("READ MORE");
-		btnNotizia1.setBounds(315, 238, 116, 21);
+		btnNotizia1.setBounds(315, 188, 116, 21);
 		Anteprima.add(btnNotizia1);
 		
 		 textNotizia2 = new JTextPane();
-		textNotizia2.setBounds(211, 283, 332, 108);
+		textNotizia2.setBounds(211, 219, 332, 46);
 		Anteprima.add(textNotizia2);
 		
 		 btnNotizia2 = new JButton("READ MORE");
-		btnNotizia2.setBounds(315, 401, 116, 21);
+		btnNotizia2.setBounds(315, 275, 116, 21);
 		Anteprima.add(btnNotizia2);
 		
 		 textNotizia3 = new JTextArea();
@@ -198,26 +216,62 @@ public class view {
 		btnsearch.setBounds(476, 82, 45, 21);
 		Anteprima.add(btnsearch);
 		
+		 comboBoxLingua = new JComboBox();
+		comboBoxLingua.setBounds(40, 275, 101, 21);
+		comboBoxLingua.addItem("tedesco");
+		comboBoxLingua.addItem("inglese");
+		comboBoxLingua.addItem("italiano");
+		comboBoxLingua.addItem("spagnolo");
+		comboBoxLingua.addItem("francese");
+		comboBoxLingua.addItem("portoghese");
+		Anteprima.add(comboBoxLingua);
+		
+		txtLingua = new JTextField();
+		txtLingua.setHorizontalAlignment(SwingConstants.CENTER);
+		txtLingua.setText("LINGUA");
+		txtLingua.setBounds(40, 246, 96, 19);
+		Anteprima.add(txtLingua);
+		txtLingua.setColumns(10);
+		
 		Notizia = new JPanel();
 		Notizia.setLayout(null);
 		Notizia.setBackground(Color.WHITE);
 		frame.getContentPane().add(Notizia, "name_2008359398100");
 		
-		txtNewYorkTimes_1 = new JTextField();
-		txtNewYorkTimes_1.setFont(new Font("Caladea", Font.BOLD, 19));
-		txtNewYorkTimes_1.setHorizontalAlignment(SwingConstants.CENTER);
-		txtNewYorkTimes_1.setText("NEW YORK TIMES");
-		txtNewYorkTimes_1.setBounds(156, 24, 290, 47);
-		Notizia.add(txtNewYorkTimes_1);
-		txtNewYorkTimes_1.setColumns(10);
+		textField_Title = new JTextField();
+		textField_Title.setFont(new Font("Caladea", Font.BOLD, 19));
+		textField_Title.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_Title.setBounds(156, 24, 290, 47);
+		Notizia.add(textField_Title);
+		textField_Title.setColumns(10);
 		
 		 btnHomenotizia = new JButton("HOME");
 		btnHomenotizia.setBounds(246, 571, 99, 29);
 		Notizia.add(btnHomenotizia);
 		
-		 textAreanotizia = new JTextArea();
-		textAreanotizia.setBounds(96, 108, 433, 446);
-		Notizia.add(textAreanotizia);
+		textAutore = new JTextField();
+		textAutore.setBounds(22, 482, 196, 29);
+		Notizia.add(textAutore);
+		textAutore.setColumns(10);
+		
+		textField_Data = new JTextField();
+		textField_Data.setBounds(21, 521, 197, 29);
+		Notizia.add(textField_Data);
+		textField_Data.setColumns(10);
+		
+		textArea_Descrizione = new JTextArea();
+		textArea_Descrizione.setBounds(237, 91, 331, 459);
+		Notizia.add(textArea_Descrizione);
+		
+		textField_Fonte = new JTextField();
+		textField_Fonte.setBounds(37, 94, 158, 29);
+		Notizia.add(textField_Fonte);
+		textField_Fonte.setColumns(10);
+		
+		textField_Immagine = new JTextField();
+		textField_Immagine.setBounds(10, 142, 202, 269);
+		Notizia.add(textField_Immagine);
+		textField_Immagine.setColumns(10);
 		
 		
 	}
@@ -227,6 +281,102 @@ public class view {
 		due.setVisible(true);
 	}
 	
+	public JTextField getTxtNewYorkTimes() {
+		return txtNewYorkTimes;
+	}
+
+	public JTextField getTextField_Title() {
+		return textField_Title;
+	}
+
+	public void setTextField_Title(JTextField textField_Title) {
+		this.textField_Title = textField_Title;
+	}
+
+	public void setTxtNewYorkTimes(JTextField txtNewYorkTimes) {
+		this.txtNewYorkTimes = txtNewYorkTimes;
+	}
+
+	public JComboBox getComboBoxLingua() {
+		return comboBoxLingua;
+	}
+
+	public void setComboBoxLingua(JComboBox comboBoxLingua) {
+		this.comboBoxLingua = comboBoxLingua;
+	}
+
+	public JTextField getTxtNewYorkTimes_1() {
+		return textField_Title;
+	}
+
+	public JTextField getTxtLingua() {
+		return txtLingua;
+	}
+
+	public void setTxtLingua(JTextField txtLingua) {
+		this.txtLingua = txtLingua;
+	}
+
+	public JTextField getTextAutore() {
+		return textAutore;
+	}
+
+	public void setTextAutore(JTextField textAutore) {
+		this.textAutore = textAutore;
+	}
+
+	public JTextField getTextField_Data() {
+		return textField_Data;
+	}
+
+	public void setTextField_Data(JTextField textField_Data) {
+		this.textField_Data = textField_Data;
+	}
+
+	public JTextArea getTextArea_Descrizione() {
+		return textArea_Descrizione;
+	}
+
+	public void setTextArea_Descrizione(JTextArea textArea_Descrizione) {
+		this.textArea_Descrizione = textArea_Descrizione;
+	}
+
+	public JTextField getTextField_Fonte() {
+		return textField_Fonte;
+	}
+
+	public void setTextField_Fonte(JTextField textField_Fonte) {
+		this.textField_Fonte = textField_Fonte;
+	}
+
+	public JTextField getTextField_Immagine() {
+		return textField_Immagine;
+	}
+
+	public void setTextField_Immagine(JTextField textField_Immagine) {
+		this.textField_Immagine = textField_Immagine;
+	}
+
+	public void setTxtNewYorkTimes_1(JTextField txtNewYorkTimes_1) {
+		this.textField_Title = txtNewYorkTimes_1;
+	}
+
+	public JPanel getAnteprima() {
+		return Anteprima;
+	}
+
+	public void setAnteprima(JPanel anteprima) {
+		Anteprima = anteprima;
+	}
+
+	public JPanel getNotizia() {
+		return Notizia;
+	}
+
+	public void setNotizia(JPanel notizia) {
+		Notizia = notizia;
+	}
+
 	public JFrame getFrame() {
 		return frame;
 	}
@@ -386,5 +536,4 @@ public class view {
 	public void setTextAreanotizia(JTextArea textAreanotizia) {
 		this.textAreanotizia = textAreanotizia;
 	}
-	
 }
