@@ -22,6 +22,8 @@ import javax.swing.JRadioButton;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class view {
 
@@ -37,12 +39,7 @@ public class view {
 	private JTextField textField_Title;
 	private JButton btnletsread;
 	private JComboBox comboBoxNews;
-	private JTextArea textNotizia1;
 	private JButton btnNotizia1;
-	private JTextPane textNotizia2;
-	private JButton btnNotizia2;
-	private JTextArea textNotizia3;
-	private JButton btnNotizia3;
 	private JButton btnHomeAnteprima;
 	private JButton btnsearch;
 	private JButton btnHomenotizia;
@@ -52,7 +49,21 @@ public class view {
 	private JTextField textField_Data;
 	private JTextArea textArea_Descrizione;
 	private JTextField textField_Fonte;
-	private JTextField textField_Immagine;
+	private JLabel lblImg;
+	private JLabel lblNot1;
+	private JLabel lblNot2;
+	private JLabel lblNot3;
+	private JLabel lblNot4;
+	private JLabel lblNot5;
+	private JLabel lblNot6;
+	private JButton btnNotizia2;
+	private JButton btnNotizia3;
+	private JButton btnNotizia4;
+	private JButton btnNotizia5;
+	private JButton btnNotizia6;
+	private JButton btnPrecedente;
+	private JButton btnSuccessivo;
+	private JTextField textField_NumPagina;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -65,7 +76,11 @@ public class view {
 		btnsearch.addActionListener(controller);
 		btnHomenotizia.addActionListener(controller);
 		comboBoxLingua.addActionListener(controller);
-		
+		btnNotizia4.addActionListener(controller);
+		btnNotizia5.addActionListener(controller);
+		btnNotizia6.addActionListener(controller);
+		btnPrecedente.addActionListener(controller);
+		btnSuccessivo.addActionListener(controller);
 	}
 	
 	/**
@@ -179,32 +194,12 @@ public class view {
 		Anteprima.add(txtCat);
 		txtCat.setColumns(10);
 		
-		 textNotizia1 = new JTextArea();
-		textNotizia1.setBounds(221, 136, 300, 42);
-		Anteprima.add(textNotizia1);
-		
-		btnNotizia1 = new JButton("READ MORE");
-		btnNotizia1.setBounds(315, 188, 116, 21);
+		btnNotizia1 = new JButton("GO");
+		btnNotizia1.setBounds(533, 132, 50, 33);
 		Anteprima.add(btnNotizia1);
 		
-		 textNotizia2 = new JTextPane();
-		textNotizia2.setBounds(211, 219, 332, 46);
-		Anteprima.add(textNotizia2);
-		
-		 btnNotizia2 = new JButton("READ MORE");
-		btnNotizia2.setBounds(315, 275, 116, 21);
-		Anteprima.add(btnNotizia2);
-		
-		 textNotizia3 = new JTextArea();
-		textNotizia3.setBounds(203, 443, 340, 108);
-		Anteprima.add(textNotizia3);
-		
-		 btnNotizia3 = new JButton("READ MORE");
-		btnNotizia3.setBounds(315, 556, 116, 21);
-		Anteprima.add(btnNotizia3);
-		
 		 btnHomeAnteprima = new JButton("HOME");
-		btnHomeAnteprima.setBounds(481, 593, 85, 21);
+		btnHomeAnteprima.setBounds(329, 579, 85, 21);
 		Anteprima.add(btnHomeAnteprima);
 		
 		textField_search = new JTextField();
@@ -233,12 +228,74 @@ public class view {
 		Anteprima.add(txtLingua);
 		txtLingua.setColumns(10);
 		
+		lblNot1 = new JLabel("");
+		lblNot1.setBounds(194, 129, 304, 40);
+		Anteprima.add(lblNot1);
+		
+		lblNot2 = new JLabel("");
+		lblNot2.setBounds(194, 192, 304, 40);
+		Anteprima.add(lblNot2);
+		
+		lblNot3 = new JLabel("");
+		lblNot3.setBounds(194, 256, 304, 40);
+		Anteprima.add(lblNot3);
+		
+		lblNot4 = new JLabel("");
+		lblNot4.setBounds(194, 326, 304, 40);
+		Anteprima.add(lblNot4);
+		
+		lblNot5 = new JLabel("");
+		lblNot5.setBounds(194, 386, 304, 40);
+		Anteprima.add(lblNot5);
+		
+		lblNot6 = new JLabel("");
+		lblNot6.setBounds(194, 450, 304, 40);
+		Anteprima.add(lblNot6);
+		
+		btnNotizia2 = new JButton("GO");
+		btnNotizia2.setBounds(533, 196, 50, 33);
+		Anteprima.add(btnNotizia2);
+		
+		btnNotizia3 = new JButton("GO");
+		btnNotizia3.setBounds(533, 260, 50, 33);
+		Anteprima.add(btnNotizia3);
+		
+		btnNotizia4 = new JButton("GO");
+		btnNotizia4.setBounds(533, 326, 50, 33);
+		Anteprima.add(btnNotizia4);
+		
+		btnNotizia5 = new JButton("GO");
+		btnNotizia5.setBounds(533, 393, 50, 33);
+		Anteprima.add(btnNotizia5);
+		
+		btnNotizia6 = new JButton("GO");
+		btnNotizia6.setBounds(533, 460, 50, 33);
+		Anteprima.add(btnNotizia6);
+		
+		btnPrecedente = new JButton("PREVIEW");
+		btnPrecedente.setBounds(262, 536, 85, 33);
+		Anteprima.add(btnPrecedente);
+		
+		btnSuccessivo = new JButton("NEXT");
+		btnSuccessivo.setBounds(397, 536, 85, 33);
+		Anteprima.add(btnSuccessivo);
+		
+		textField_NumPagina = new JTextField();
+		textField_NumPagina.setFont(new Font("Tahoma", Font.BOLD, 13));
+		textField_NumPagina.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_NumPagina.setText("1");
+		textField_NumPagina.setEditable(false);
+		textField_NumPagina.setBounds(342, 536, 56, 33);
+		Anteprima.add(textField_NumPagina);
+		textField_NumPagina.setColumns(10);
+		
 		Notizia = new JPanel();
 		Notizia.setLayout(null);
 		Notizia.setBackground(Color.WHITE);
 		frame.getContentPane().add(Notizia, "name_2008359398100");
 		
 		textField_Title = new JTextField();
+		textField_Title.setEditable(false);
 		textField_Title.setFont(new Font("Caladea", Font.BOLD, 19));
 		textField_Title.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Title.setBounds(156, 24, 290, 47);
@@ -250,28 +307,31 @@ public class view {
 		Notizia.add(btnHomenotizia);
 		
 		textAutore = new JTextField();
+		textAutore.setEditable(false);
 		textAutore.setBounds(22, 482, 196, 29);
 		Notizia.add(textAutore);
 		textAutore.setColumns(10);
 		
 		textField_Data = new JTextField();
+		textField_Data.setEditable(false);
 		textField_Data.setBounds(21, 521, 197, 29);
 		Notizia.add(textField_Data);
 		textField_Data.setColumns(10);
 		
 		textArea_Descrizione = new JTextArea();
+		textArea_Descrizione.setEditable(false);
 		textArea_Descrizione.setBounds(237, 91, 331, 459);
 		Notizia.add(textArea_Descrizione);
 		
 		textField_Fonte = new JTextField();
+		textField_Fonte.setEditable(false);
 		textField_Fonte.setBounds(37, 94, 158, 29);
 		Notizia.add(textField_Fonte);
 		textField_Fonte.setColumns(10);
 		
-		textField_Immagine = new JTextField();
-		textField_Immagine.setBounds(10, 142, 202, 269);
-		Notizia.add(textField_Immagine);
-		textField_Immagine.setColumns(10);
+		lblImg = new JLabel("");
+		lblImg.setBounds(37, 162, 181, 257);
+		Notizia.add(lblImg);
 		
 		
 	}
@@ -313,6 +373,110 @@ public class view {
 		return txtLingua;
 	}
 
+	public JLabel getLblImg() {
+		return lblImg;
+	}
+
+	public JLabel getLblNot1() {
+		return lblNot1;
+	}
+
+	public void setLblNot1(JLabel lblNot1) {
+		this.lblNot1 = lblNot1;
+	}
+
+	public JLabel getLblNot2() {
+		return lblNot2;
+	}
+
+	public void setLblNot2(JLabel lblNot2) {
+		this.lblNot2 = lblNot2;
+	}
+
+	public JLabel getLblNot3() {
+		return lblNot3;
+	}
+
+	public void setLblNot3(JLabel lblNot3) {
+		this.lblNot3 = lblNot3;
+	}
+
+	public JLabel getLblNot4() {
+		return lblNot4;
+	}
+
+	public void setLblNot4(JLabel lblNot4) {
+		this.lblNot4 = lblNot4;
+	}
+
+	public JLabel getLblNot5() {
+		return lblNot5;
+	}
+
+	public void setLblNot5(JLabel lblNot5) {
+		this.lblNot5 = lblNot5;
+	}
+
+	public JLabel getLblNot6() {
+		return lblNot6;
+	}
+
+	public void setLblNot6(JLabel lblNot6) {
+		this.lblNot6 = lblNot6;
+	}
+
+	public JButton getBtnNotizia4() {
+		return btnNotizia4;
+	}
+
+	public void setBtnNotizia4(JButton btnNotizia4) {
+		this.btnNotizia4 = btnNotizia4;
+	}
+
+	public JButton getBtnNotizia5() {
+		return btnNotizia5;
+	}
+
+	public void setBtnNotizia5(JButton btnNotizia5) {
+		this.btnNotizia5 = btnNotizia5;
+	}
+
+	public JButton getBtnNotizia6() {
+		return btnNotizia6;
+	}
+
+	public void setBtnNotizia6(JButton btnNotizia6) {
+		this.btnNotizia6 = btnNotizia6;
+	}
+
+	public JButton getBtnPrecedente() {
+		return btnPrecedente;
+	}
+
+	public void setBtnPrecedente(JButton btnPrecedente) {
+		this.btnPrecedente = btnPrecedente;
+	}
+
+	public JButton getBtnSuccessivo() {
+		return btnSuccessivo;
+	}
+
+	public void setBtnSuccessivo(JButton btnSuccessivo) {
+		this.btnSuccessivo = btnSuccessivo;
+	}
+
+	public JTextField getTextField_NumPagina() {
+		return textField_NumPagina;
+	}
+
+	public void setTextField_NumPagina(JTextField textField_NumPagina) {
+		this.textField_NumPagina = textField_NumPagina;
+	}
+
+	public void setLblImg(JLabel lblImg) {
+		this.lblImg = lblImg;
+	}
+
 	public void setTxtLingua(JTextField txtLingua) {
 		this.txtLingua = txtLingua;
 	}
@@ -349,13 +513,7 @@ public class view {
 		this.textField_Fonte = textField_Fonte;
 	}
 
-	public JTextField getTextField_Immagine() {
-		return textField_Immagine;
-	}
 
-	public void setTextField_Immagine(JTextField textField_Immagine) {
-		this.textField_Immagine = textField_Immagine;
-	}
 
 	public void setTxtNewYorkTimes_1(JTextField txtNewYorkTimes_1) {
 		this.textField_Title = txtNewYorkTimes_1;
@@ -457,13 +615,7 @@ public class view {
 		this.comboBoxNews = comboBoxNews;
 	}
 
-	public JTextArea getTextNotizia1() {
-		return textNotizia1;
-	}
 
-	public void setTextNotizia1(JTextArea textNotizia1) {
-		this.textNotizia1 = textNotizia1;
-	}
 
 	public JButton getBtnNotizia1() {
 		return btnNotizia1;
@@ -473,13 +625,7 @@ public class view {
 		this.btnNotizia1 = btnNotizia1;
 	}
 
-	public JTextPane getTextNotizia2() {
-		return textNotizia2;
-	}
 
-	public void setTextNotizia2(JTextPane textNotizia2) {
-		this.textNotizia2 = textNotizia2;
-	}
 
 	public JButton getBtnNotizia2() {
 		return btnNotizia2;
@@ -489,13 +635,7 @@ public class view {
 		this.btnNotizia2 = btnNotizia2;
 	}
 
-	public JTextArea getTextNotizia3() {
-		return textNotizia3;
-	}
 
-	public void setTextNotizia3(JTextArea textNotizia3) {
-		this.textNotizia3 = textNotizia3;
-	}
 
 	public JButton getBtnNotizia3() {
 		return btnNotizia3;
@@ -529,11 +669,5 @@ public class view {
 		this.btnHomenotizia = btnHomenotizia;
 	}
 
-	public JTextArea getTextAreanotizia() {
-		return textAreanotizia;
-	}
 
-	public void setTextAreanotizia(JTextArea textAreanotizia) {
-		this.textAreanotizia = textAreanotizia;
-	}
 }
