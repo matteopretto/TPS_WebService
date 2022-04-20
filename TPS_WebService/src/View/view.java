@@ -27,7 +27,7 @@ import java.awt.event.ActionEvent;
 
 public class view {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JPanel Home;
 	private JPanel Anteprima;
 	private JPanel Notizia;

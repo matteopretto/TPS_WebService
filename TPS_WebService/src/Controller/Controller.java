@@ -42,6 +42,10 @@ public class Controller implements ActionListener {
 		if (arg0.getSource() == view.getBtnHomenotizia()) {
 			view.cambiaPanel(view.getNotizia(), view.getHome());
 		}
+		
+	if(arg0.getSource()==view.getBtnletsread()) {
+		view.cambiaPanel(view.getHome(), view.getAnteprima());
+	}
 
 		if (arg0.getSource() == view.getBtnsearch()) {
 			String ricerca = view.getTextField_search().getText();
@@ -133,6 +137,8 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 		
 		
@@ -155,6 +161,7 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 		
 		
@@ -177,6 +184,7 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 		
 		
@@ -199,6 +207,7 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 		
 		
@@ -221,6 +230,7 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 		
 		
@@ -243,6 +253,7 @@ public class Controller implements ActionListener {
 
 			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
 			view.getLblImg().setIcon(imgThisImg);
+			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
 	}
 }
