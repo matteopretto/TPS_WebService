@@ -10,7 +10,6 @@ import javax.swing.ImageIcon;
 import java.awt.Toolkit;
 
 import Model.Article;
-import Model.Main;
 import Model.DataStore;
 import Model.Notizia;
 
@@ -20,7 +19,6 @@ import Service.SentAndReceive;
 public class Controller implements ActionListener {
 
 	private Article article;
-	private Main main;
 	// private DataStore dataStore;
 	private Notizia notizia;
 	private view view;
@@ -108,16 +106,23 @@ if(checked) {
 		}
 
 		if (arg0.getSource() == view.getBtnSuccessivo()) {
-			if (num < Integer.parseInt(DataStore.getNotizia().getTotalResults()) - 6) {
+			if (num < DataStore.getNotizia().getArticles().size() -6) {
+				System.out.println(DataStore.getNotizia().getArticles().size());
 				numPag += 1;
-				num = num + 6;
-				view.getTextField_NumPagina().setText(""+numPag);
+				view.getTextField_NumPagina().setText("" + numPag);
 				view.getLblNot1().setText(DataStore.getArticles().get(num).getTitle());
-				view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
-				view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
-				view.getLblNot4().setText(DataStore.getArticles().get(num + 3).getTitle());
-				view.getLblNot5().setText(DataStore.getArticles().get(num + 4).getTitle());
-				view.getLblNot6().setText(DataStore.getArticles().get(num + 5).getTitle());
+				if (DataStore.getArticles().get(num + 1) != null)
+					view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
+				if (DataStore.getArticles().get(num + 2) != null)
+					view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
+				if (DataStore.getArticles().get(num + 3) != null)
+					view.getLblNot4().setText(DataStore.getArticles().get(num + 3).getTitle());
+				if (DataStore.getArticles().get(num + 4) != null)
+					view.getLblNot5().setText(DataStore.getArticles().get(num + 4).getTitle());
+				if (DataStore.getArticles().get(num + 5) != null)
+					view.getLblNot6().setText(DataStore.getArticles().get(num + 5).getTitle());
+				num = num + 6;
+
 			}
 		}
 		
