@@ -21,12 +21,13 @@ public class Controller implements ActionListener {
 
 	private Article article;
 	private Main main;
-	// private DataStore dataStore;
+	 private DataStore dataStore;
 	private Notizia notizia;
 	private view view;
 	private SentAndReceive SentAndReceive;
 	private int num = 0;
 	private int numPag = 1;
+	private boolean checked=false;
 
 	private HashMap<String, String> Mappa = new HashMap<String, String>();
 
@@ -48,6 +49,7 @@ public class Controller implements ActionListener {
 	}
 
 		if (arg0.getSource() == view.getBtnsearch()) {
+			checked=true;
 			String ricerca = view.getTextField_search().getText();
 			Mappa.put("q", ricerca);
 			if (view.getComboBoxLingua().getSelectedItem().equals("francese")) {
@@ -90,7 +92,7 @@ public class Controller implements ActionListener {
 			 */
 
 		}
-
+if(checked) {
 		if (arg0.getSource() == view.getBtnPrecedente()) {
 			if (num != 0) {
 				num = num - 6;
@@ -257,5 +259,6 @@ public class Controller implements ActionListener {
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
+	}
 	}
 }
