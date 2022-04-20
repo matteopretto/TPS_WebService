@@ -168,7 +168,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			System.out.println(urlImg);
 			String title = "" + DataStore.getArticles().get(n).getTitle();
@@ -197,7 +197,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			System.out.println(urlImg);
 			String title = "" + DataStore.getArticles().get(n).getTitle();
@@ -226,7 +226,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
@@ -254,7 +254,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
@@ -282,7 +282,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
@@ -310,7 +310,7 @@ if(checked) {
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
-			String fonte = "" + DataStore.getArticles().get(n).getSource();
+			String fonte = "" + DataStore.getArticles().get(n).getSource().getName();
 			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 

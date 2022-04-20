@@ -12,14 +12,14 @@ public class Article {
     private String author;
     private String urlToImage;
     private String description;
-    private String source;
+    private Source source;
     private String title;
     private String url;
     public Article(){
 
     }
 
-    public Article(String publishedAt, String author, String urlToImage, String description, String source, String title, String url, String content) {
+    public Article(String publishedAt, String author, String urlToImage, String description, Source source, String title, String url, String content) {
         this.publishedAt = publishedAt;
         this.author = author;
         this.urlToImage = urlToImage;
@@ -66,11 +66,11 @@ public class Article {
     }
 
     @XmlElement(name="source")
-    public String getSource() {
+    public Source getSource() {
         return source;
     }
 
-    public void setSource(String source) {
+    public void setSource(Source source) {
         this.source = source;
     }
 
