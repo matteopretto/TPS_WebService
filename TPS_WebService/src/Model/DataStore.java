@@ -10,7 +10,12 @@ public class DataStore {
         return notizia.getArticles();
     }
 
+    public static Notizia getNotizia() {
+        return notizia;
+    }
+
     public static void setNotizia(Notizia notizia) {
         DataStore.notizia = notizia;
     }
+
 }
