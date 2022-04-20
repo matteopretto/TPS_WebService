@@ -20,6 +20,7 @@ public class Notizia {
         this.totalResults = totalResults;
         this.status = status;
         this.articles = articleArrayList;
+
     }
 
     @XmlElement(name="totalResults")

@@ -41,10 +41,12 @@ public class SentAndReceive {
             String str = EntityUtils.toString(entity);
             JSONObject json = new JSONObject(str);
             String xml = XML.toString(json,"notizie");
+            System.out.println(xml);
             JAXBContext context = JAXBContext.newInstance(Notizia.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             Notizia notizia = (Notizia) unmarshaller.unmarshal(new StringReader(xml.replaceAll("<(/{0,1})@", "<$1__at__")));
             DataStore.setNotizia(notizia);
+            System.out.println(DataStore.getNotizia().getArticles().get(0).getUrlToImage());
         } catch (Exception e) {
             System.out.println("Qualcosa non va !!!!");
         }

@@ -3,6 +3,8 @@ package Controller;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 
 import javax.swing.ImageIcon;
@@ -11,6 +13,7 @@ import java.awt.Toolkit;
 
 import Model.Article;
 import Model.DataStore;
+import Model.ImageTool;
 import Model.Notizia;
 
 import View.view;
@@ -92,50 +95,82 @@ public class Controller implements ActionListener {
 		}
 if(checked) {
 		if (arg0.getSource() == view.getBtnPrecedente()) {
-			if (num != 0) {
-				num = num - 6;
+			if (numPag > 1) {
 				numPag -= 1;
-				view.getTextField_NumPagina().setText(""+numPag);
-				view.getLblNot1().setText(DataStore.getArticles().get(num).getTitle());
-				view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
-				view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
-				view.getLblNot4().setText(DataStore.getArticles().get(num + 3).getTitle());
-				view.getLblNot5().setText(DataStore.getArticles().get(num + 4).getTitle());
-				view.getLblNot6().setText(DataStore.getArticles().get(num + 5).getTitle());
+				view.getTextField_NumPagina().setText(""+(numPag));
+				view.getLblNot1().setText(DataStore.getArticles().get((numPag - 1 ) * 6).getTitle());
+				view.getBtnNotizia2().setEnabled(true);
+				view.getLblNot2().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 1).getTitle());
+				view.getBtnNotizia3().setEnabled(true);
+				view.getLblNot3().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 2).getTitle());
+				view.getBtnNotizia4().setEnabled(true);
+				view.getLblNot4().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 3).getTitle());
+				view.getBtnNotizia5().setEnabled(true);
+				view.getLblNot5().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 4).getTitle());
+				view.getBtnNotizia6().setEnabled(true);
+				view.getLblNot6().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 5).getTitle());
 			}
 		}
 
 		if (arg0.getSource() == view.getBtnSuccessivo()) {
-			if (num < DataStore.getNotizia().getArticles().size() -6) {
+			if ((numPag) * 6 < DataStore.getNotizia().getArticles().size()) {
 				System.out.println(DataStore.getNotizia().getArticles().size());
-				numPag += 1;
-				view.getTextField_NumPagina().setText("" + numPag);
-				view.getLblNot1().setText(DataStore.getArticles().get(num).getTitle());
-				if (DataStore.getArticles().get(num + 1) != null)
-					view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
-				if (DataStore.getArticles().get(num + 2) != null)
-					view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
-				if (DataStore.getArticles().get(num + 3) != null)
-					view.getLblNot4().setText(DataStore.getArticles().get(num + 3).getTitle());
-				if (DataStore.getArticles().get(num + 4) != null)
-					view.getLblNot5().setText(DataStore.getArticles().get(num + 4).getTitle());
-				if (DataStore.getArticles().get(num + 5) != null)
-					view.getLblNot6().setText(DataStore.getArticles().get(num + 5).getTitle());
-				num = num + 6;
+				view.getLblNot1().setText(DataStore.getArticles().get((numPag) * 6 ).getTitle());
+				if (numPag* 6 + 1 < DataStore.getNotizia().getArticles().size()){
+					view.getLblNot2().setText(DataStore.getArticles().get((numPag ) * 6  + 1).getTitle());
+					view.getBtnNotizia2().setEnabled(true);
+				}
+				else{
+					view.getLblNot2().setText("");
+					view.getBtnNotizia2().setEnabled(false);
+				}
 
+				if (numPag* 6 + 2 < DataStore.getNotizia().getArticles().size()){
+					view.getLblNot3().setText(DataStore.getArticles().get((numPag ) * 6  + 2).getTitle());
+					view.getBtnNotizia3().setEnabled(true);
+				}else{
+					view.getLblNot3().setText("");
+					view.getBtnNotizia3().setEnabled(false);
+				}
+				if (numPag* 6 + 3 < DataStore.getNotizia().getArticles().size()){
+					view.getLblNot4().setText(DataStore.getArticles().get((numPag ) * 6  + 3).getTitle());
+					view.getBtnNotizia4().setEnabled(true);
+				}
+				else{
+					view.getLblNot4().setText("");
+					view.getBtnNotizia4().setEnabled(false);
+				}
+				if (numPag* 6 + 4 < DataStore.getNotizia().getArticles().size())
+				{
+					view.getLblNot5().setText(DataStore.getArticles().get((numPag ) * 6  + 4).getTitle());
+					view.getBtnNotizia5().setEnabled(true);
+				}else{
+					view.getLblNot5().setText("");
+					view.getBtnNotizia5().setEnabled(false);
+				}
+				if (numPag* 6 + 5 < DataStore.getNotizia().getArticles().size()){
+					view.getLblNot6().setText(DataStore.getArticles().get((numPag ) * 6  + 5).getTitle());
+					view.getBtnNotizia6().setEnabled(true);
+				}else{
+					view.getLblNot6().setText("");
+					view.getBtnNotizia6().setEnabled(false);
+				}
+				numPag += 1 ;
+				view.getTextField_NumPagina().setText("" + numPag );
 			}
 		}
 		
 		
 		if (arg0.getSource() == view.getBtnNotizia1()) {
 
-			int n = num;
+			int n = numPag * 6;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
+			System.out.println(urlImg);
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -143,8 +178,12 @@ if(checked) {
 			view.getTextField_Data().setText(data);
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
-
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
@@ -153,13 +192,14 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia2()) {
 
-			int n = num + 1;
+			int n = numPag * 6 + 1 ;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
+			System.out.println(urlImg);
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -168,7 +208,12 @@ if(checked) {
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
 
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
@@ -176,13 +221,13 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia3()) {
 
-			int n = num + 2;
+			int n = numPag * 6  + 2;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -191,7 +236,12 @@ if(checked) {
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
 
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
@@ -199,13 +249,13 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia4()) {
 
-			int n = num + 3;
+			int n = numPag * 6 + 3;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -214,7 +264,12 @@ if(checked) {
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
 
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
@@ -222,13 +277,13 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia5()) {
 
-			int n = num + 4;
+			int n = numPag * +6 + 4;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -237,7 +292,12 @@ if(checked) {
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
 
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}
@@ -245,13 +305,13 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia6()) {
 
-			int n = num + 5;
+			int n = numPag * 6  + 5;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
 			String data = "" + DataStore.getArticles().get(n).getPublishedAt();
 			String fonte = "" + DataStore.getArticles().get(n).getSource();
-			String urlImg = "" + DataStore.getArticles().get(n).getUrlImage();
+			String urlImg = "" + DataStore.getArticles().get(n).getUrlToImage();
 			String title = "" + DataStore.getArticles().get(n).getTitle();
 
 			view.getTextAutore().setText(autore);
@@ -260,7 +320,12 @@ if(checked) {
 			view.getTextArea_Descrizione().setText(descrizione);
 			view.getTextField_Title().setText(title);
 
-			ImageIcon imgThisImg = new ImageIcon(Toolkit.getDefaultToolkit().getImage(urlImg));
+			ImageIcon imgThisImg = null;
+			try {
+				imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg),true);
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
 		}

@@ -6,11 +6,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="articles")
-@XmlType(propOrder = {"publishedAt","author","urlImage","description","source","title","url"})
+@XmlType(propOrder = {"publishedAt","author","urlToImage","description","source","title","url"})
 public class Article {
     private String publishedAt;
     private String author;
-    private String urlImage;
+    private String urlToImage;
     private String description;
     private String source;
     private String title;
@@ -19,10 +19,10 @@ public class Article {
 
     }
 
-    public Article(String publishedAt, String author, String urlImage, String description, String source, String title, String url, String content) {
+    public Article(String publishedAt, String author, String urlToImage, String description, String source, String title, String url, String content) {
         this.publishedAt = publishedAt;
         this.author = author;
-        this.urlImage = urlImage;
+        this.urlToImage = urlToImage;
         this.description = description;
         this.source = source;
         this.title = title;
@@ -47,13 +47,13 @@ public class Article {
         this.author = author;
     }
 
-    @XmlElement(name="urlImage")
-    public String getUrlImage() {
-        return urlImage;
+    @XmlElement(name="urlToImage")
+    public String getUrlToImage() {
+        return urlToImage;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
+    public void setUrlToImage(String urlToImage) {
+        this.urlToImage = urlToImage;
     }
 
     @XmlElement(name="description")
