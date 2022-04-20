@@ -95,6 +95,7 @@ public class Controller implements ActionListener {
 			if (num != 0) {
 				num = num - 6;
 				numPag -= 1;
+				view.getTextField_NumPagina().setText(""+numPag);
 				view.getLblNot1().setText(DataStore.getArticles().get(num).getTitle());
 				view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
 				view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
@@ -108,6 +109,7 @@ public class Controller implements ActionListener {
 			if (num < Integer.parseInt(DataStore.getNotizia().getTotalResults()) - 6) {
 				numPag += 1;
 				num = num + 6;
+				view.getTextField_NumPagina().setText(""+numPag);
 				view.getLblNot1().setText(DataStore.getArticles().get(num).getTitle());
 				view.getLblNot2().setText(DataStore.getArticles().get(num + 1).getTitle());
 				view.getLblNot3().setText(DataStore.getArticles().get(num + 2).getTitle());
