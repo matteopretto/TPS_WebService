@@ -33,6 +33,7 @@ public class SentAndReceive {
                 String value = entry.getValue();
                 ubi.addParameter(key,value);
             }
+            ubi.addParameter("apiKey","4b757926f0a9488682909783eeed97fa");
             uri = ubi.build();
             httpGet = new HttpGet(uri);
             ClassicHttpResponse response = client.execute(httpGet);
