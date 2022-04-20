@@ -21,7 +21,7 @@ public class Controller implements ActionListener {
 
 	private Article article;
 	private Main main;
-	 private DataStore dataStore;
+	// private DataStore dataStore;
 	private Notizia notizia;
 	private view view;
 	private SentAndReceive SentAndReceive;
