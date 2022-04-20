@@ -43,7 +43,7 @@ public class SentAndReceive {
             JAXBContext context = JAXBContext.newInstance(Notizia.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
             Notizia notizia = (Notizia) unmarshaller.unmarshal(new StringReader(xml.replaceAll("<(/{0,1})@", "<$1__at__")));
-            DataStore.setArticles(notizia.getArticles());
+            DataStore.setNotizia(notizia);
         } catch (Exception e) {
             System.out.println("Qualcosa non va !!!!");
         }
