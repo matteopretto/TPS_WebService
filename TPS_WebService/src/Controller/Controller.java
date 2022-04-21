@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import javax.swing.ImageIcon;
@@ -40,18 +41,45 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getSource() == view.getBtnHomeAnteprima()) {
 			view.cambiaPanel(view.getAnteprima(), view.getHome());
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		if (arg0.getSource() == view.getBtnHomenotizia()) {
 			view.cambiaPanel(view.getNotizia(), view.getHome());
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 	if(arg0.getSource()==view.getBtnletsread()) {
 		view.cambiaPanel(view.getHome(), view.getAnteprima());
+		Calendar rightnow = Calendar.getInstance();
+		String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+		String min = "" + rightnow.get(Calendar.MINUTE);
+		
+		view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+		view.getLblOrarioHome().setText(""+hr+":"+min);
+		view.getLblOrarioNotizie().setText(""+hr+":"+min);
 	}
 
 		if (arg0.getSource() == view.getBtnsearch()) {
 			checked=true;
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
 			String ricerca = view.getTextField_search().getText();
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 			Mappa.put("q", ricerca);
 			if (view.getComboBoxLingua().getSelectedItem().equals("francese")) {
 				Mappa.put("language", "fr");
@@ -109,6 +137,14 @@ if(checked) {
 				view.getLblNot5().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 4).getTitle());
 				view.getBtnNotizia6().setEnabled(true);
 				view.getLblNot6().setText(DataStore.getArticles().get((numPag - 1 ) * 6 + 5).getTitle());
+				
+				Calendar rightnow = Calendar.getInstance();
+				String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+				String min = "" + rightnow.get(Calendar.MINUTE);
+				
+				view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+				view.getLblOrarioHome().setText(""+hr+":"+min);
+				view.getLblOrarioNotizie().setText(""+hr+":"+min);
 			}
 		}
 
@@ -158,6 +194,15 @@ if(checked) {
 				numPag += 1 ;
 				view.getTextField_NumPagina().setText("" + numPag );
 			}
+			
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -187,6 +232,14 @@ if(checked) {
 			view.getLblImg().setIcon(imgThisImg);
 			
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -216,6 +269,14 @@ if(checked) {
 			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -244,6 +305,14 @@ if(checked) {
 			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -272,6 +341,14 @@ if(checked) {
 			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -300,6 +377,14 @@ if(checked) {
 			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 		
 		
@@ -328,6 +413,14 @@ if(checked) {
 			}
 			view.getLblImg().setIcon(imgThisImg);
 			view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+			
+			Calendar rightnow = Calendar.getInstance();
+			String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+			String min = "" + rightnow.get(Calendar.MINUTE);
+			
+			view.getLblOrarioAnteprima().setText(""+hr+":"+min);
+			view.getLblOrarioHome().setText(""+hr+":"+min);
+			view.getLblOrarioNotizie().setText(""+hr+":"+min);
 		}
 	}
 	}

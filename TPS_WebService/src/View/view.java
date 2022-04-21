@@ -23,7 +23,9 @@ import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 import java.awt.event.ActionEvent;
+import javax.swing.JEditorPane;
 
 public class view {
 
@@ -64,6 +66,9 @@ public class view {
 	private JTextField textField_NumPagina;
 	private JLabel lblNewLabel;
 	private JLabel lblOrderBy;
+	private JLabel lblOrarioHome;
+	private JLabel lblOrarioAnteprima;
+	private JLabel lblOrarioNotizie;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -161,6 +166,12 @@ public class view {
 		txtrHereYouCan.setBounds(156, 172, 273, 128);
 		Home.add(txtrHereYouCan);
 		
+		lblOrarioHome = new JLabel("");
+		lblOrarioHome.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrarioHome.setFont(new Font("Source Sans Pro Light", Font.BOLD, 13));
+		lblOrarioHome.setBounds(459, 25, 93, 27);
+		Home.add(lblOrarioHome);
+		
 		Anteprima = new JPanel();
 		Anteprima.setLayout(null);
 		Anteprima.setBackground(Color.WHITE);
@@ -198,7 +209,7 @@ public class view {
 		 btnHomeAnteprima = new JButton("HOME");
 		 btnHomeAnteprima.setFont(new Font("Tahoma", Font.BOLD, 10));
 		 btnHomeAnteprima.setBackground(new Color(0, 102, 255));
-		btnHomeAnteprima.setBounds(329, 579, 85, 21);
+		btnHomeAnteprima.setBounds(296, 579, 85, 21);
 		Anteprima.add(btnHomeAnteprima);
 		
 		textField_search = new JTextField();
@@ -276,13 +287,13 @@ public class view {
 		btnPrecedente.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnPrecedente.setBackground(new Color(0, 102, 255));
 		btnPrecedente.setForeground(new Color(0, 0, 0));
-		btnPrecedente.setBounds(262, 536, 85, 33);
+		btnPrecedente.setBounds(226, 536, 85, 33);
 		Anteprima.add(btnPrecedente);
 		
 		btnSuccessivo = new JButton("NEXT");
 		btnSuccessivo.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnSuccessivo.setBackground(new Color(0, 102, 255));
-		btnSuccessivo.setBounds(397, 536, 85, 33);
+		btnSuccessivo.setBounds(362, 536, 85, 33);
 		Anteprima.add(btnSuccessivo);
 		
 		textField_NumPagina = new JTextField();
@@ -290,7 +301,7 @@ public class view {
 		textField_NumPagina.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_NumPagina.setText("1");
 		textField_NumPagina.setEditable(false);
-		textField_NumPagina.setBounds(342, 536, 56, 33);
+		textField_NumPagina.setBounds(309, 536, 56, 33);
 		Anteprima.add(textField_NumPagina);
 		textField_NumPagina.setColumns(10);
 		
@@ -306,6 +317,12 @@ public class view {
 		lblOrderBy.setBounds(40, 155, 98, 33);
 		Anteprima.add(lblOrderBy);
 		
+		lblOrarioAnteprima = new JLabel("");
+		lblOrarioAnteprima.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrarioAnteprima.setFont(new Font("Source Serif Pro", Font.BOLD, 13));
+		lblOrarioAnteprima.setBounds(476, 10, 93, 27);
+		Anteprima.add(lblOrarioAnteprima);
+		
 		Notizia = new JPanel();
 		Notizia.setLayout(null);
 		Notizia.setBackground(Color.WHITE);
@@ -320,6 +337,7 @@ public class view {
 		textField_Title.setColumns(10);
 		
 		 btnHomenotizia = new JButton("HOME");
+		 btnHomenotizia.setBackground(new Color(51, 102, 255));
 		btnHomenotizia.setBounds(246, 571, 99, 29);
 		Notizia.add(btnHomenotizia);
 		
@@ -349,9 +367,21 @@ public class view {
 		textField_Fonte.setColumns(10);
 		
 		lblImg = new JLabel("");
-		lblImg.setBounds(37, 162, 181, 257);
+		lblImg.setBounds(10, 132, 217, 340);
 		Notizia.add(lblImg);
 		
+		lblOrarioNotizie = new JLabel("");
+		lblOrarioNotizie.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrarioNotizie.setFont(new Font("Source Serif Pro", Font.BOLD, 13));
+		lblOrarioNotizie.setBounds(471, 24, 93, 27);
+		Notizia.add(lblOrarioNotizie);
+		Calendar rightnow = Calendar.getInstance();
+		String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
+		String min = "" + rightnow.get(Calendar.MINUTE);
+		
+		lblOrarioAnteprima.setText(""+hr+":"+min);
+		lblOrarioHome.setText(""+hr+":"+min);
+		lblOrarioNotizie.setText(""+hr+":"+min);
 		
 	}
 
@@ -366,6 +396,30 @@ public class view {
 
 	public JTextField getTextField_Title() {
 		return textField_Title;
+	}
+
+	public JLabel getLblOrarioHome() {
+		return lblOrarioHome;
+	}
+
+	public void setLblOrarioHome(JLabel lblOrarioHome) {
+		this.lblOrarioHome = lblOrarioHome;
+	}
+
+	public JLabel getLblOrarioAnteprima() {
+		return lblOrarioAnteprima;
+	}
+
+	public void setLblOrarioAnteprima(JLabel lblOrarioAnteprima) {
+		this.lblOrarioAnteprima = lblOrarioAnteprima;
+	}
+
+	public JLabel getLblOrarioNotizie() {
+		return lblOrarioNotizie;
+	}
+
+	public void setLblOrarioNotizie(JLabel lblOrarioNotizie) {
+		this.lblOrarioNotizie = lblOrarioNotizie;
 	}
 
 	public void setTextField_Title(JTextField textField_Title) {
@@ -677,6 +731,4 @@ public class view {
 	public void setBtnHomenotizia(JButton btnHomenotizia) {
 		this.btnHomenotizia = btnHomenotizia;
 	}
-
-
 }
