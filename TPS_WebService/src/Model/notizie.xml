@@ -1,0 +1,15 @@
+<notizie>
+    <totalResults>1</totalResults>
+    <articles>
+        <author>Pretto</author>
+        <title>Titolo</title>
+        <description>Descrizione</description>
+        <publishedAt>2022-03-24T22:50:30Z</publishedAt>
+        <url>http://www.google.com</url>
+        <urlToImage>http://www.google.com/image.png</urlToImage>
+        <source>
+            <name>Pretto News</name>
+            <id>pretto-news</id>
+        </source>
+    </articles>
+</notizie>
