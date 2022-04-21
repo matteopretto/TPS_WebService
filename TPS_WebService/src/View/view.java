@@ -349,7 +349,7 @@ public class view {
 		
 		textField_Data = new JTextField();
 		textField_Data.setEditable(false);
-		textField_Data.setBounds(21, 521, 197, 29);
+		textField_Data.setBounds(209, 521, 197, 29);
 		Notizia.add(textField_Data);
 		textField_Data.setColumns(10);
 		
@@ -357,17 +357,17 @@ public class view {
 		textArea_Descrizione.setWrapStyleWord(true);
 		textArea_Descrizione.setLineWrap(true);
 		textArea_Descrizione.setEditable(false);
-		textArea_Descrizione.setBounds(237, 91, 331, 459);
+		textArea_Descrizione.setBounds(20, 91, 548, 168);
 		Notizia.add(textArea_Descrizione);
 		
 		textField_Fonte = new JTextField();
 		textField_Fonte.setEditable(false);
-		textField_Fonte.setBounds(37, 94, 158, 29);
+		textField_Fonte.setBounds(386, 482, 158, 29);
 		Notizia.add(textField_Fonte);
 		textField_Fonte.setColumns(10);
 		
 		lblImg = new JLabel("");
-		lblImg.setBounds(10, 132, 217, 340);
+		lblImg.setBounds(86, 269, 431, 203);
 		Notizia.add(lblImg);
 		
 		lblOrarioNotizie = new JLabel("");
