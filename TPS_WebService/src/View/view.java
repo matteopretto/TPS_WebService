@@ -34,7 +34,6 @@ public class view {
 	private JTextField txtNewYorkTimes;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField txtCat;
 	private JTextField textField_search;
 	private JTextField textField_Title;
 	private JButton btnletsread;
@@ -43,7 +42,6 @@ public class view {
 	private JButton btnHomeAnteprima;
 	private JButton btnsearch;
 	private JButton btnHomenotizia;
-	private JTextField txtLingua;
 	private JComboBox comboBoxLingua;
 	private JTextField textAutore;
 	private JTextField textField_Data;
@@ -64,6 +62,8 @@ public class view {
 	private JButton btnPrecedente;
 	private JButton btnSuccessivo;
 	private JTextField textField_NumPagina;
+	private JLabel lblNewLabel;
+	private JLabel lblOrderBy;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -132,31 +132,33 @@ public class view {
 		txtNewYorkTimes.setColumns(10);
 		
 		JTextArea txtrWelcomeToThe = new JTextArea();
-		txtrWelcomeToThe.setFont(new Font("Source Serif Pro", Font.BOLD | Font.ITALIC, 16));
+		txtrWelcomeToThe.setFont(new Font("Source Serif Pro", Font.BOLD | Font.ITALIC, 17));
 		txtrWelcomeToThe.setEditable(false);
 		txtrWelcomeToThe.setRows(2);
-		txtrWelcomeToThe.setText("                        Welcome to the best\r\n                         online newspaper!");
-		txtrWelcomeToThe.setBounds(119, 65, 283, 52);
+		txtrWelcomeToThe.setText("                 Welcome to the best\r\n                    online newspaper!");
+		txtrWelcomeToThe.setBounds(119, 65, 283, 61);
 		Home.add(txtrWelcomeToThe);
 		
 		 btnletsread = new JButton("LET'S READ");
 		btnletsread.setBackground(new Color(50, 205, 50));
 		btnletsread.setForeground(new Color(0, 0, 0));
-		btnletsread.setBounds(230, 341, 112, 27);
+		btnletsread.setBounds(227, 359, 112, 27);
 		Home.add(btnletsread);
 		
 		JTextArea txtrClickingOnThe = new JTextArea();
+		txtrClickingOnThe.setWrapStyleWord(true);
 		txtrClickingOnThe.setBackground(new Color(220, 220, 220));
-		txtrClickingOnThe.setFont(new Font("Source Code Pro ExtraLight", Font.BOLD, 13));
+		txtrClickingOnThe.setFont(new Font("Source Code Pro ExtraLight", Font.BOLD | Font.ITALIC, 15));
 		txtrClickingOnThe.setText("Clicking on the button 'LET'S READ' \r\nyou give consent us to process \r\nyour data in order to improve our\r\nservice.");
 		txtrClickingOnThe.setEditable(false);
-		txtrClickingOnThe.setBounds(146, 464, 304, 96);
+		txtrClickingOnThe.setBounds(119, 464, 343, 148);
 		Home.add(txtrClickingOnThe);
 		
 		JTextArea txtrHereYouCan = new JTextArea();
-		txtrHereYouCan.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 14));
+		txtrHereYouCan.setEditable(false);
+		txtrHereYouCan.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 15));
 		txtrHereYouCan.setText("Here you can read news about:\r\n-SPORT\r\n-POLITICS\r\n-ENVIROMENTS\r\n-GOSSIP");
-		txtrHereYouCan.setBounds(156, 172, 273, 101);
+		txtrHereYouCan.setBounds(156, 172, 273, 128);
 		Home.add(txtrHereYouCan);
 		
 		Anteprima = new JPanel();
@@ -176,6 +178,7 @@ public class view {
 		Anteprima.add(textField);
 		
 		 comboBoxNews = new JComboBox();
+		 comboBoxNews.setBackground(new Color(204, 204, 204));
 		comboBoxNews.setBounds(21, 188, 134, 21);
 		comboBoxNews.addItem("pertinenza");
 		comboBoxNews.addItem("popolarita");
@@ -187,32 +190,31 @@ public class view {
 		Anteprima.add(textField_1);
 		textField_1.setColumns(10);
 		
-		txtCat = new JTextField();
-		txtCat.setText("ORDINA PER");
-		txtCat.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCat.setBounds(40, 159, 96, 19);
-		Anteprima.add(txtCat);
-		txtCat.setColumns(10);
-		
 		btnNotizia1 = new JButton("GO");
-		btnNotizia1.setBounds(533, 132, 50, 33);
+		btnNotizia1.setBackground(new Color(153, 255, 102));
+		btnNotizia1.setBounds(527, 132, 56, 33);
 		Anteprima.add(btnNotizia1);
 		
 		 btnHomeAnteprima = new JButton("HOME");
+		 btnHomeAnteprima.setFont(new Font("Tahoma", Font.BOLD, 10));
+		 btnHomeAnteprima.setBackground(new Color(0, 102, 255));
 		btnHomeAnteprima.setBounds(329, 579, 85, 21);
 		Anteprima.add(btnHomeAnteprima);
 		
 		textField_search = new JTextField();
+		textField_search.setBackground(new Color(204, 204, 204));
 		textField_search.setBounds(191, 79, 275, 27);
 		Anteprima.add(textField_search);
 		textField_search.setColumns(10);
 		
 		 btnsearch = new JButton("->");
+		 btnsearch.setBackground(Color.GREEN);
 		btnsearch.setBounds(476, 82, 45, 21);
 		Anteprima.add(btnsearch);
 		
 		 comboBoxLingua = new JComboBox();
-		comboBoxLingua.setBounds(40, 275, 101, 21);
+		 comboBoxLingua.setBackground(new Color(204, 204, 204));
+		comboBoxLingua.setBounds(40, 266, 101, 21);
 		comboBoxLingua.addItem("tedesco");
 		comboBoxLingua.addItem("inglese");
 		comboBoxLingua.addItem("italiano");
@@ -220,13 +222,6 @@ public class view {
 		comboBoxLingua.addItem("francese");
 		comboBoxLingua.addItem("portoghese");
 		Anteprima.add(comboBoxLingua);
-		
-		txtLingua = new JTextField();
-		txtLingua.setHorizontalAlignment(SwingConstants.CENTER);
-		txtLingua.setText("LINGUA");
-		txtLingua.setBounds(40, 246, 96, 19);
-		Anteprima.add(txtLingua);
-		txtLingua.setColumns(10);
 		
 		lblNot1 = new JLabel("");
 		lblNot1.setBounds(194, 129, 304, 40);
@@ -253,30 +248,40 @@ public class view {
 		Anteprima.add(lblNot6);
 		
 		btnNotizia2 = new JButton("GO");
-		btnNotizia2.setBounds(533, 196, 50, 33);
+		btnNotizia2.setBackground(new Color(153, 255, 102));
+		btnNotizia2.setBounds(527, 196, 56, 33);
 		Anteprima.add(btnNotizia2);
 		
 		btnNotizia3 = new JButton("GO");
-		btnNotizia3.setBounds(533, 260, 50, 33);
+		btnNotizia3.setBackground(new Color(153, 255, 102));
+		btnNotizia3.setBounds(527, 260, 56, 33);
 		Anteprima.add(btnNotizia3);
 		
 		btnNotizia4 = new JButton("GO");
-		btnNotizia4.setBounds(533, 326, 50, 33);
+		btnNotizia4.setBackground(new Color(153, 255, 102));
+		btnNotizia4.setBounds(527, 326, 56, 33);
 		Anteprima.add(btnNotizia4);
 		
 		btnNotizia5 = new JButton("GO");
-		btnNotizia5.setBounds(533, 393, 50, 33);
+		btnNotizia5.setBackground(new Color(153, 255, 102));
+		btnNotizia5.setBounds(527, 393, 56, 33);
 		Anteprima.add(btnNotizia5);
 		
 		btnNotizia6 = new JButton("GO");
-		btnNotizia6.setBounds(533, 460, 50, 33);
+		btnNotizia6.setBackground(new Color(153, 255, 102));
+		btnNotizia6.setBounds(527, 460, 56, 33);
 		Anteprima.add(btnNotizia6);
 		
 		btnPrecedente = new JButton("PREVIEW");
+		btnPrecedente.setFont(new Font("Tahoma", Font.BOLD, 10));
+		btnPrecedente.setBackground(new Color(0, 102, 255));
+		btnPrecedente.setForeground(new Color(0, 0, 0));
 		btnPrecedente.setBounds(262, 536, 85, 33);
 		Anteprima.add(btnPrecedente);
 		
 		btnSuccessivo = new JButton("NEXT");
+		btnSuccessivo.setFont(new Font("Tahoma", Font.BOLD, 10));
+		btnSuccessivo.setBackground(new Color(0, 102, 255));
 		btnSuccessivo.setBounds(397, 536, 85, 33);
 		Anteprima.add(btnSuccessivo);
 		
@@ -288,6 +293,18 @@ public class view {
 		textField_NumPagina.setBounds(342, 536, 56, 33);
 		Anteprima.add(textField_NumPagina);
 		textField_NumPagina.setColumns(10);
+		
+		lblNewLabel = new JLabel("LANGUAGE");
+		lblNewLabel.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 12));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(40, 232, 98, 33);
+		Anteprima.add(lblNewLabel);
+		
+		lblOrderBy = new JLabel("ORDER BY");
+		lblOrderBy.setHorizontalAlignment(SwingConstants.CENTER);
+		lblOrderBy.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 12));
+		lblOrderBy.setBounds(40, 155, 98, 33);
+		Anteprima.add(lblOrderBy);
 		
 		Notizia = new JPanel();
 		Notizia.setLayout(null);
@@ -319,6 +336,8 @@ public class view {
 		textField_Data.setColumns(10);
 		
 		textArea_Descrizione = new JTextArea();
+		textArea_Descrizione.setWrapStyleWord(true);
+		textArea_Descrizione.setLineWrap(true);
 		textArea_Descrizione.setEditable(false);
 		textArea_Descrizione.setBounds(237, 91, 331, 459);
 		Notizia.add(textArea_Descrizione);
@@ -369,9 +388,7 @@ public class view {
 		return textField_Title;
 	}
 
-	public JTextField getTxtLingua() {
-		return txtLingua;
-	}
+
 
 	public JLabel getLblImg() {
 		return lblImg;
@@ -477,9 +494,7 @@ public class view {
 		this.lblImg = lblImg;
 	}
 
-	public void setTxtLingua(JTextField txtLingua) {
-		this.txtLingua = txtLingua;
-	}
+	
 
 	public JTextField getTextAutore() {
 		return textAutore;
@@ -583,13 +598,7 @@ public class view {
 		this.textField_1 = textField_1;
 	}
 
-	public JTextField getTxtCat() {
-		return txtCat;
-	}
 
-	public void setTxtCat(JTextField txtCat) {
-		this.txtCat = txtCat;
-	}
 
 	public JTextField getTextField_search() {
 		return textField_search;
