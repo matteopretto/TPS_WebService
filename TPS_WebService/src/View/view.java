@@ -367,7 +367,7 @@ public class view {
 		textField_Fonte.setColumns(10);
 		
 		lblImg = new JLabel("");
-		lblImg.setBounds(22, 207, 546, 230);
+		lblImg.setBounds(98, 207, 470, 230);
 		Notizia.add(lblImg);
 		
 		lblOrarioNotizie = new JLabel("");
