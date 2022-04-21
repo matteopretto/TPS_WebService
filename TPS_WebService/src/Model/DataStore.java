@@ -4,18 +4,13 @@ import java.util.ArrayList;
 
 public class DataStore {
 
-    private static Notizia notizia;
+    private static ArrayList<Article> articles;
 
     public static ArrayList<Article> getArticles() {
-        return notizia.getArticles();
+        return articles;
     }
 
-    public static Notizia getNotizia() {
-        return notizia;
+    public static void setArticles(ArrayList<Article> articles) {
+        DataStore.articles = articles;
     }
-
-    public static void setNotizia(Notizia notizia) {
-        DataStore.notizia = notizia;
-    }
-
 }

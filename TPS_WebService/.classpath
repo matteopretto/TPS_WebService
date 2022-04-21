@@ -25,5 +25,19 @@
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.25.jar"/>
 	<classpathentry kind="lib" path="lib/mod/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="lib/mod/codemodel.jar"/>
+	<classpathentry kind="lib" path="lib/mod/dtd-parser.jar"/>
+	<classpathentry kind="lib" path="lib/mod/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="lib/mod/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/mod/istack-commons-tools.jar"/>
+	<classpathentry kind="lib" path="lib/mod/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="lib/mod/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="lib/mod/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/mod/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="lib/mod/relaxng-datatype.jar"/>
+	<classpathentry kind="lib" path="lib/mod/rngom.jar"/>
+	<classpathentry kind="lib" path="lib/mod/stax-ex.jar"/>
+	<classpathentry kind="lib" path="lib/mod/txw2.jar"/>
+	<classpathentry kind="lib" path="lib/mod/xsom.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
