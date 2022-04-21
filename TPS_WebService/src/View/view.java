@@ -69,6 +69,7 @@ public class view {
 	private JLabel lblOrarioHome;
 	private JLabel lblOrarioAnteprima;
 	private JLabel lblOrarioNotizie;
+	private JButton btnGoBack;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -376,9 +377,23 @@ public class view {
 		lblOrarioNotizie.setBounds(471, 24, 93, 27);
 		Notizia.add(lblOrarioNotizie);
 		
+		btnGoBack = new JButton("GO BACK");
+		btnGoBack.setBackground(new Color(255, 99, 71));
+		btnGoBack.setFont(new Font("Source Serif Pro Semibold", Font.BOLD, 12));
+		btnGoBack.setBounds(10, 35, 124, 29);
+		Notizia.add(btnGoBack);
+		
 		
 	}
 	
+	public JButton getBtnGoBack() {
+		return btnGoBack;
+	}
+
+	public void setBtnGoBack(JButton btnGoBack) {
+		this.btnGoBack = btnGoBack;
+	}
+
 	public void cambiaOra() {
 		Calendar rightnow = Calendar.getInstance();
 		String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
