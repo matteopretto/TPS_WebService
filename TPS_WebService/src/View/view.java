@@ -357,7 +357,7 @@ public class view {
 		textArea_Descrizione.setWrapStyleWord(true);
 		textArea_Descrizione.setLineWrap(true);
 		textArea_Descrizione.setEditable(false);
-		textArea_Descrizione.setBounds(20, 91, 548, 168);
+		textArea_Descrizione.setBounds(20, 91, 548, 157);
 		Notizia.add(textArea_Descrizione);
 		
 		textField_Fonte = new JTextField();
@@ -367,7 +367,7 @@ public class view {
 		textField_Fonte.setColumns(10);
 		
 		lblImg = new JLabel("");
-		lblImg.setBounds(86, 269, 431, 203);
+		lblImg.setBounds(22, 207, 546, 230);
 		Notizia.add(lblImg);
 		
 		lblOrarioNotizie = new JLabel("");
