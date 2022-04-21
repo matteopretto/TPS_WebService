@@ -14,8 +14,8 @@ public class DataStore {
         return notizia;
     }
 
-    public static void setNotizia(Notizia notizia) {
-        DataStore.notizia = notizia;
+    public static void setNotizia(Notizia mynotizia) {
+        notizia = mynotizia;
     }
 
 }
