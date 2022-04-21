@@ -41,6 +41,11 @@ public class Controller implements ActionListener {
         if (arg0.getSource() == view.getBtnHomeAnteprima()) {
             view.cambiaPanel(view.getAnteprima(), view.getHome());
         }
+        
+        if(arg0.getSource()==view.getBtnGoBack()) {
+        	view.cambiaPanel(view.getNotizia(), view.getAnteprima());
+        	view.cambiaOra();
+        }
         if (arg0.getSource() == view.getBtnHomenotizia()) {
             view.cambiaPanel(view.getNotizia(), view.getHome());
         }
