@@ -100,7 +100,7 @@ public class Controller implements ActionListener {
                 }
                 if (DataStore.getArticles().size() > 2)
                     view.getLblNot3().setText(DataStore.getArticles().get(2).getTitle());
-                {
+                else{
                     view.getLblNot3().setText("");
                     view.getLblNot3().setEnabled(false);
                 }
@@ -202,7 +202,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia1()) {
 
-                int n = numPag * 6;
+                int n = (numPag - 1) * 6;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
@@ -232,7 +232,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia2()) {
 
-                int n = numPag * 6 + 1;
+                int n = (numPag - 1) * 6 + 1;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
@@ -262,7 +262,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia3()) {
 
-                int n = numPag * 6 + 2;
+                int n = (numPag - 1) * 6 + 2;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
@@ -291,7 +291,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia4()) {
 
-                int n = numPag * 6 + 3;
+                int n = (numPag - 1) * 6 + 3;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
@@ -320,7 +320,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia5()) {
 
-                int n = numPag * +6 + 4;
+                int n = (numPag - 1) * +6 + 4;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
@@ -349,7 +349,7 @@ public class Controller implements ActionListener {
 
             if (arg0.getSource() == view.getBtnNotizia6()) {
 
-                int n = numPag * 6 + 5;
+                int n = (numPag - 1) * 6 + 5;
                 String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
                 String url = "" + DataStore.getArticles().get(n).getUrl();
                 String descrizione = "" + DataStore.getArticles().get(n).getDescription();
