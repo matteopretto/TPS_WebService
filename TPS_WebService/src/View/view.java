@@ -375,14 +375,24 @@ public class view {
 		lblOrarioNotizie.setFont(new Font("Source Serif Pro", Font.BOLD, 13));
 		lblOrarioNotizie.setBounds(471, 24, 93, 27);
 		Notizia.add(lblOrarioNotizie);
+		
+		
+	}
+	
+	public void cambiaOra() {
 		Calendar rightnow = Calendar.getInstance();
 		String hr = "" + rightnow.get(Calendar.HOUR_OF_DAY);
 		String min = "" + rightnow.get(Calendar.MINUTE);
-		
+		int minuti= Integer.parseInt(min);
+		if(minuti<10) {
+			if(minuti==0)
+				min="00";
+			else 
+				min="0"+min;
+		}
 		lblOrarioAnteprima.setText(""+hr+":"+min);
 		lblOrarioHome.setText(""+hr+":"+min);
 		lblOrarioNotizie.setText(""+hr+":"+min);
-		
 	}
 
 	public void cambiaPanel(JPanel uno, JPanel due) {
