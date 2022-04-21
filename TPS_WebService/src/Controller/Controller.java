@@ -277,7 +277,7 @@ if(checked) {
 		
 		if (arg0.getSource() == view.getBtnNotizia5()) {
 
-			int n = numPag * +6 + 4;
+			int n = numPag * 6 + 4;
 			String autore = "Autore: " + DataStore.getArticles().get(n).getAuthor();
 			String url = "" + DataStore.getArticles().get(n).getUrl();
 			String descrizione = "" + DataStore.getArticles().get(n).getDescription();
