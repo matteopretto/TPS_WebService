@@ -22,7 +22,6 @@ public class Ora implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("Ora");
         }
     }
 }
