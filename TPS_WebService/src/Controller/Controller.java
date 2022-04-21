@@ -50,6 +50,7 @@ public class Controller implements ActionListener {
         }
 
         if (arg0.getSource() == view.getBtnsearch()) {
+        	view.cambiaOra();
             String ricerca = view.getTextField_search().getText();
             Mappa.put("q", ricerca);
             if (view.getComboBoxLingua().getSelectedItem().equals("francese")) {
@@ -144,6 +145,7 @@ public class Controller implements ActionListener {
                     view.getBtnNotizia6().setEnabled(true);
                     view.getLblNot6().setText(DataStore.getArticles().get((numPag - 1) * 6 + 5).getTitle());
                 }
+                view.cambiaOra();
             }
 
             if (arg0.getSource() == view.getBtnSuccessivo()) {
@@ -189,6 +191,7 @@ public class Controller implements ActionListener {
                     numPag += 1;
                     view.getTextField_NumPagina().setText("" + numPag);
                 }
+                view.cambiaOra();
             }
 
 
@@ -218,6 +221,7 @@ public class Controller implements ActionListener {
                 view.getLblImg().setIcon(imgThisImg);
 
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
 
 
@@ -247,6 +251,7 @@ public class Controller implements ActionListener {
                 }
                 view.getLblImg().setIcon(imgThisImg);
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
 
 
@@ -275,6 +280,7 @@ public class Controller implements ActionListener {
                 }
                 view.getLblImg().setIcon(imgThisImg);
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
 
 
@@ -303,6 +309,7 @@ public class Controller implements ActionListener {
                 }
                 view.getLblImg().setIcon(imgThisImg);
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
 
 
@@ -331,6 +338,7 @@ public class Controller implements ActionListener {
                 }
                 view.getLblImg().setIcon(imgThisImg);
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
 
 
@@ -359,6 +367,7 @@ public class Controller implements ActionListener {
                 }
                 view.getLblImg().setIcon(imgThisImg);
                 view.cambiaPanel(view.getAnteprima(), view.getNotizia());
+                view.cambiaOra();
             }
         }
     }
