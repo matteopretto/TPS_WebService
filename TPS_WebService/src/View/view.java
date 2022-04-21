@@ -87,6 +87,7 @@ public class view {
 		btnNotizia6.addActionListener(controller);
 		btnPrecedente.addActionListener(controller);
 		btnSuccessivo.addActionListener(controller);
+		btnGoBack.addActionListener(controller);
 	}
 	
 	/**
