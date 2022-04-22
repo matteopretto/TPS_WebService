@@ -69,7 +69,7 @@ public class view {
 	private JLabel lblOrarioAnteprima;
 	private JLabel lblOrarioNotizie;
 	private JButton btnGoBack;
-	private JTextField textURL;
+	private JTextArea textURL;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -365,12 +365,14 @@ public class view {
 		Notizia.add(textArea_Descrizione);
 		
 		textField_Fonte = new JTextField();
+		textField_Fonte.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Fonte.setEditable(false);
-		textField_Fonte.setBounds(386, 482, 158, 29);
+		textField_Fonte.setBounds(407, 482, 158, 29);
 		Notizia.add(textField_Fonte);
 		textField_Fonte.setColumns(10);
 		
 		lblImg = new JLabel("");
+		lblImg.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblImg.setBounds(98, 207, 470, 230);
 		Notizia.add(lblImg);
 		
@@ -386,10 +388,10 @@ public class view {
 		btnGoBack.setBounds(10, 35, 124, 29);
 		Notizia.add(btnGoBack);
 		
-		textURL = new JTextField();
+		textURL = new JTextArea();
+		textURL.setLineWrap(true);
 		textURL.setEditable(false);
-		textURL.setColumns(10);
-		textURL.setBounds(52, 532, 470, 29);
+		textURL.setBounds(22, 526, 546, 36);
 		Notizia.add(textURL);
 		
 		
@@ -404,11 +406,13 @@ public class view {
 	}
 	
 
-	public JTextField getTextURL() {
+
+
+	public JTextArea getTextURL() {
 		return textURL;
 	}
 
-	public void setTextURL(JTextField textURL) {
+	public void setTextURL(JTextArea textURL) {
 		this.textURL = textURL;
 	}
 
