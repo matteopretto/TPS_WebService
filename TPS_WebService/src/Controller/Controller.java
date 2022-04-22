@@ -51,6 +51,14 @@ public class Controller implements ActionListener {
         if (arg0.getSource() == view.getBtnsearch()) {
             String ricerca = view.getTextField_search().getText();
             Mappa.put("q", ricerca);
+         
+            view.getBtnNotizia1().setVisible(true);
+            view.getBtnNotizia2().setVisible(true);
+            view.getBtnNotizia3().setVisible(true);
+            view.getBtnNotizia4().setVisible(true);
+            view.getBtnNotizia5().setVisible(true);
+            view.getBtnNotizia6().setVisible(true);
+         
             if (view.getComboBoxLingua().getSelectedItem().equals("francese")) {
                 Mappa.put("language", "fr");
             }
@@ -208,6 +216,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);

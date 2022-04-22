@@ -35,7 +35,6 @@ public class view {
 	private JPanel Notizia;
 	private JTextField txtNewYorkTimes;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_search;
 	private JTextField textField_Title;
 	private JButton btnletsread;
@@ -70,6 +69,7 @@ public class view {
 	private JLabel lblOrarioAnteprima;
 	private JLabel lblOrarioNotizie;
 	private JButton btnGoBack;
+	private JTextField textURL;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -123,7 +123,7 @@ public class view {
 		frame.getContentPane().setLayout(new CardLayout(0, 0));;
 		
 		Home = new JPanel();
-		Home.setBackground(Color.WHITE);
+		Home.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(Home, "name_2008321513000");
 		Home.setLayout(null);
 		
@@ -176,7 +176,7 @@ public class view {
 		
 		Anteprima = new JPanel();
 		Anteprima.setLayout(null);
-		Anteprima.setBackground(Color.WHITE);
+		Anteprima.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(Anteprima, "name_2008333190200");
 		
 		textField = new JTextField();
@@ -192,26 +192,22 @@ public class view {
 		
 		 comboBoxNews = new JComboBox();
 		 comboBoxNews.setBackground(new Color(204, 204, 204));
-		comboBoxNews.setBounds(21, 188, 134, 21);
+		comboBoxNews.setBounds(10, 36, 134, 21);
 		comboBoxNews.addItem("pertinenza");
 		comboBoxNews.addItem("popolarita");
 		
 		Anteprima.add(comboBoxNews);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(176, 93, 1, 507);
-		Anteprima.add(textField_1);
-		textField_1.setColumns(10);
-		
 		btnNotizia1 = new JButton("GO");
 		btnNotizia1.setBackground(new Color(153, 255, 102));
 		btnNotizia1.setBounds(527, 132, 56, 33);
 		Anteprima.add(btnNotizia1);
+		btnNotizia1.setVisible(false);
 		
 		 btnHomeAnteprima = new JButton("HOME");
 		 btnHomeAnteprima.setFont(new Font("Tahoma", Font.BOLD, 10));
 		 btnHomeAnteprima.setBackground(new Color(0, 102, 255));
-		btnHomeAnteprima.setBounds(296, 579, 85, 21);
+		btnHomeAnteprima.setBounds(230, 579, 85, 21);
 		Anteprima.add(btnHomeAnteprima);
 		
 		textField_search = new JTextField();
@@ -227,7 +223,7 @@ public class view {
 		
 		 comboBoxLingua = new JComboBox();
 		 comboBoxLingua.setBackground(new Color(204, 204, 204));
-		comboBoxLingua.setBounds(40, 266, 101, 21);
+		comboBoxLingua.setBounds(10, 82, 101, 21);
 		comboBoxLingua.addItem("tedesco");
 		comboBoxLingua.addItem("inglese");
 		comboBoxLingua.addItem("italiano");
@@ -237,27 +233,27 @@ public class view {
 		Anteprima.add(comboBoxLingua);
 		
 		lblNot1 = new JLabel("");
-		lblNot1.setBounds(194, 129, 304, 40);
+		lblNot1.setBounds(58, 132, 391, 40);
 		Anteprima.add(lblNot1);
 		
 		lblNot2 = new JLabel("");
-		lblNot2.setBounds(194, 192, 304, 40);
+		lblNot2.setBounds(58, 189, 397, 40);
 		Anteprima.add(lblNot2);
 		
 		lblNot3 = new JLabel("");
-		lblNot3.setBounds(194, 256, 304, 40);
+		lblNot3.setBounds(58, 256, 397, 40);
 		Anteprima.add(lblNot3);
 		
 		lblNot4 = new JLabel("");
-		lblNot4.setBounds(194, 326, 304, 40);
+		lblNot4.setBounds(58, 326, 391, 40);
 		Anteprima.add(lblNot4);
 		
 		lblNot5 = new JLabel("");
-		lblNot5.setBounds(194, 386, 304, 40);
+		lblNot5.setBounds(58, 386, 397, 40);
 		Anteprima.add(lblNot5);
 		
 		lblNot6 = new JLabel("");
-		lblNot6.setBounds(194, 450, 304, 40);
+		lblNot6.setBounds(58, 450, 391, 40);
 		Anteprima.add(lblNot6);
 		
 		btnNotizia2 = new JButton("GO");
@@ -285,17 +281,23 @@ public class view {
 		btnNotizia6.setBounds(527, 460, 56, 33);
 		Anteprima.add(btnNotizia6);
 		
+		btnNotizia2.setVisible(false);
+		btnNotizia3.setVisible(false);
+		btnNotizia4.setVisible(false);
+		btnNotizia5.setVisible(false);
+		btnNotizia6.setVisible(false);
+		
 		btnPrecedente = new JButton("PREVIEW");
 		btnPrecedente.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnPrecedente.setBackground(new Color(0, 102, 255));
 		btnPrecedente.setForeground(new Color(0, 0, 0));
-		btnPrecedente.setBounds(226, 536, 85, 33);
+		btnPrecedente.setBounds(163, 536, 85, 33);
 		Anteprima.add(btnPrecedente);
 		
 		btnSuccessivo = new JButton("NEXT");
 		btnSuccessivo.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnSuccessivo.setBackground(new Color(0, 102, 255));
-		btnSuccessivo.setBounds(362, 536, 85, 33);
+		btnSuccessivo.setBounds(296, 536, 85, 33);
 		Anteprima.add(btnSuccessivo);
 		
 		textField_NumPagina = new JTextField();
@@ -303,20 +305,20 @@ public class view {
 		textField_NumPagina.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_NumPagina.setText("1");
 		textField_NumPagina.setEditable(false);
-		textField_NumPagina.setBounds(309, 536, 56, 33);
+		textField_NumPagina.setBounds(247, 536, 56, 33);
 		Anteprima.add(textField_NumPagina);
 		textField_NumPagina.setColumns(10);
 		
 		lblNewLabel = new JLabel("LANGUAGE");
 		lblNewLabel.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 12));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(40, 232, 98, 33);
+		lblNewLabel.setBounds(-11, 58, 98, 33);
 		Anteprima.add(lblNewLabel);
 		
 		lblOrderBy = new JLabel("ORDER BY");
 		lblOrderBy.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOrderBy.setFont(new Font("Source Serif Pro Semibold", Font.ITALIC, 12));
-		lblOrderBy.setBounds(40, 155, 98, 33);
+		lblOrderBy.setBounds(-11, 10, 98, 33);
 		Anteprima.add(lblOrderBy);
 		
 		lblOrarioAnteprima = new JLabel("");
@@ -327,13 +329,13 @@ public class view {
 		
 		Notizia = new JPanel();
 		Notizia.setLayout(null);
-		Notizia.setBackground(Color.WHITE);
+		Notizia.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(Notizia, "name_2008359398100");
 		
 		textField_Title = new JTextField();
+		textField_Title.setHorizontalAlignment(SwingConstants.LEFT);
 		textField_Title.setEditable(false);
 		textField_Title.setFont(new Font("Caladea", Font.BOLD, 19));
-		textField_Title.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_Title.setBounds(156, 24, 290, 47);
 		Notizia.add(textField_Title);
 		textField_Title.setColumns(10);
@@ -351,7 +353,7 @@ public class view {
 		
 		textField_Data = new JTextField();
 		textField_Data.setEditable(false);
-		textField_Data.setBounds(209, 521, 197, 29);
+		textField_Data.setBounds(371, 601, 197, 29);
 		Notizia.add(textField_Data);
 		textField_Data.setColumns(10);
 		
@@ -384,6 +386,12 @@ public class view {
 		btnGoBack.setBounds(10, 35, 124, 29);
 		Notizia.add(btnGoBack);
 		
+		textURL = new JTextField();
+		textURL.setEditable(false);
+		textURL.setColumns(10);
+		textURL.setBounds(52, 532, 470, 29);
+		Notizia.add(textURL);
+		
 		
 	}
 	
@@ -393,6 +401,15 @@ public class view {
 
 	public void setBtnGoBack(JButton btnGoBack) {
 		this.btnGoBack = btnGoBack;
+	}
+	
+
+	public JTextField getTextURL() {
+		return textURL;
+	}
+
+	public void setTextURL(JTextField textURL) {
+		this.textURL = textURL;
 	}
 
 	public void cambiaOra() {
@@ -670,13 +687,7 @@ public class view {
 		this.textField = textField;
 	}
 
-	public JTextField getTextField_1() {
-		return textField_1;
-	}
 
-	public void setTextField_1(JTextField textField_1) {
-		this.textField_1 = textField_1;
-	}
 
 
 
