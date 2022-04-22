@@ -246,7 +246,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
-
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);
@@ -274,7 +274,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
-
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);
@@ -302,7 +302,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
-
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);
@@ -330,7 +330,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
-
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);
@@ -358,7 +358,7 @@ public class Controller implements ActionListener {
                 view.getTextField_Data().setText(data);
                 view.getTextArea_Descrizione().setText(descrizione);
                 view.getTextField_Title().setText(title);
-
+                view.getTextURL().setText(url);
                 ImageIcon imgThisImg = null;
                 try {
                     imgThisImg = ImageTool.createAutoAdjustIcon(new URL(urlImg), true);

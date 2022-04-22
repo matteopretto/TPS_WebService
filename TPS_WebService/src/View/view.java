@@ -36,7 +36,6 @@ public class view {
 	private JTextField txtNewYorkTimes;
 	private JTextField textField;
 	private JTextField textField_search;
-	private JTextField textField_Title;
 	private JButton btnletsread;
 	private JComboBox comboBoxNews;
 	private JButton btnNotizia1;
@@ -46,7 +45,7 @@ public class view {
 	private JComboBox comboBoxLingua;
 	private JTextField textAutore;
 	private JTextField textField_Data;
-	private JTextArea textArea_Descrizione;
+	private JTextArea txtrOracleStellt;
 	private JTextField textField_Fonte;
 	private JLabel lblImg;
 	private JLabel lblNot1;
@@ -70,6 +69,7 @@ public class view {
 	private JLabel lblOrarioNotizie;
 	private JButton btnGoBack;
 	private JTextArea textURL;
+	private JTextArea textField_Title;
 	
 	public void registraController(Controller controller) {
 		btnletsread.addActionListener(controller);
@@ -332,14 +332,6 @@ public class view {
 		Notizia.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(Notizia, "name_2008359398100");
 		
-		textField_Title = new JTextField();
-		textField_Title.setHorizontalAlignment(SwingConstants.LEFT);
-		textField_Title.setEditable(false);
-		textField_Title.setFont(new Font("Caladea", Font.BOLD, 19));
-		textField_Title.setBounds(156, 24, 290, 47);
-		Notizia.add(textField_Title);
-		textField_Title.setColumns(10);
-		
 		 btnHomenotizia = new JButton("HOME");
 		 btnHomenotizia.setBackground(new Color(51, 102, 255));
 		btnHomenotizia.setBounds(246, 571, 99, 29);
@@ -357,12 +349,12 @@ public class view {
 		Notizia.add(textField_Data);
 		textField_Data.setColumns(10);
 		
-		textArea_Descrizione = new JTextArea();
-		textArea_Descrizione.setWrapStyleWord(true);
-		textArea_Descrizione.setLineWrap(true);
-		textArea_Descrizione.setEditable(false);
-		textArea_Descrizione.setBounds(20, 91, 548, 157);
-		Notizia.add(textArea_Descrizione);
+		txtrOracleStellt = new JTextArea();
+		txtrOracleStellt.setWrapStyleWord(true);
+		txtrOracleStellt.setLineWrap(true);
+		txtrOracleStellt.setEditable(false);
+		txtrOracleStellt.setBounds(20, 91, 548, 157);
+		Notizia.add(txtrOracleStellt);
 		
 		textField_Fonte = new JTextField();
 		textField_Fonte.setHorizontalAlignment(SwingConstants.CENTER);
@@ -382,10 +374,10 @@ public class view {
 		lblOrarioNotizie.setBounds(471, 24, 93, 27);
 		Notizia.add(lblOrarioNotizie);
 		
-		btnGoBack = new JButton("GO BACK");
+		btnGoBack = new JButton("BACK");
 		btnGoBack.setBackground(new Color(255, 99, 71));
 		btnGoBack.setFont(new Font("Source Serif Pro Semibold", Font.BOLD, 12));
-		btnGoBack.setBounds(10, 35, 124, 29);
+		btnGoBack.setBounds(10, 24, 99, 29);
 		Notizia.add(btnGoBack);
 		
 		textURL = new JTextArea();
@@ -393,6 +385,15 @@ public class view {
 		textURL.setEditable(false);
 		textURL.setBounds(22, 526, 546, 36);
 		Notizia.add(textURL);
+		
+		textField_Title = new JTextArea();
+		textField_Title.setBackground(new Color(169, 169, 169));
+		textField_Title.setFont(new Font("Source Sans Pro Semibold", Font.ITALIC, 18));
+		textField_Title.setEditable(false);
+		textField_Title.setLineWrap(true);
+		textField_Title.setWrapStyleWord(true);
+		textField_Title.setBounds(119, 10, 342, 71);
+		Notizia.add(textField_Title);
 		
 		
 	}
@@ -441,9 +442,6 @@ public class view {
 		return txtNewYorkTimes;
 	}
 
-	public JTextField getTextField_Title() {
-		return textField_Title;
-	}
 
 	public JLabel getLblOrarioHome() {
 		return lblOrarioHome;
@@ -469,9 +467,7 @@ public class view {
 		this.lblOrarioNotizie = lblOrarioNotizie;
 	}
 
-	public void setTextField_Title(JTextField textField_Title) {
-		this.textField_Title = textField_Title;
-	}
+
 
 	public void setTxtNewYorkTimes(JTextField txtNewYorkTimes) {
 		this.txtNewYorkTimes = txtNewYorkTimes;
@@ -485,11 +481,16 @@ public class view {
 		this.comboBoxLingua = comboBoxLingua;
 	}
 
-	public JTextField getTxtNewYorkTimes_1() {
+
+
+
+	public JTextArea getTextField_Title() {
 		return textField_Title;
 	}
 
-
+	public void setTextField_Title(JTextArea textField_Title) {
+		this.textField_Title = textField_Title;
+	}
 
 	public JLabel getLblImg() {
 		return lblImg;
@@ -614,11 +615,11 @@ public class view {
 	}
 
 	public JTextArea getTextArea_Descrizione() {
-		return textArea_Descrizione;
+		return txtrOracleStellt;
 	}
 
 	public void setTextArea_Descrizione(JTextArea textArea_Descrizione) {
-		this.textArea_Descrizione = textArea_Descrizione;
+		this.txtrOracleStellt = textArea_Descrizione;
 	}
 
 	public JTextField getTextField_Fonte() {
@@ -631,9 +632,7 @@ public class view {
 
 
 
-	public void setTxtNewYorkTimes_1(JTextField txtNewYorkTimes_1) {
-		this.textField_Title = txtNewYorkTimes_1;
-	}
+
 
 	public JPanel getAnteprima() {
 		return Anteprima;
